@@ -37,27 +37,21 @@
         
         {% for row in rows %}     
           {% set column %}
-            {% spaceless %}
-              {{ row.content }}
-            {% endspaceless %}
+            {{ row.content }}
           {% endset %}        
           
           {% if loop.index==1 %}
-            {% set column = keep_image(column, 'large') %}
             {% set column_1 %}
               {{ column|raw }}          
             {% endset %}          
-          {% elseif loop.index==2 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_2 %}
               {{ column|raw }}          
             {% endset %}       
           {% else %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_3 %}
               {{ column|raw }}          
             {% endset %} 
-          {% endif %}    
+          {% endif %}
         {% endfor %}
 
         <div class="row">
@@ -70,28 +64,20 @@
         
         {% for row in rows %}     
           {% set column %}
-            {% spaceless %}
-              {{ row.content }}
-            {% endspaceless %}
+            {{ row.content }}
           {% endset %}        
           
           {% if loop.index==1 %}
-            {% set column = keep_image(column, 'large') %}
             {% set column_1 %}
               {{ column|raw }}          
             {% endset %}          
-          {% elseif loop.index==2 %}
-            {% set column = keep_image(column, 'medium') %}
             {% set column_2 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==3 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_3 %}
               {{ column|raw }}          
             {% endset %}          
-          {% else %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_4 %}
               {{ column|raw }}          
             {% endset %} 
@@ -111,33 +97,25 @@
       
         {% for row in rows %}     
           {% set column %}
-            {% spaceless %}
-              {{ row.content }}
-            {% endspaceless %}
+            {{ row.content }}
           {% endset %}        
           
           {% if loop.index==1 %}
-            {% set column = keep_image(column, 'large') %}
             {% set column_1 %}
               {{ column|raw }}          
             {% endset %}          
-          {% elseif loop.index==2 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_2 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==3 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_3 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==4 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_4 %}
               {{ column|raw }}          
             {% endset %} 
           {% else %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_5 %}
               {{ column|raw }}          
             {% endset %}
@@ -158,28 +136,22 @@
       
         {% for row in rows %}   
           {% set column %}
-            {% spaceless %}
-              {{ row.content }}
-            {% endspaceless %}
+            {{ row.content }}
           {% endset %}           
 
           {% if loop.index==1 %}
-            {% set column = keep_image(column, 'large') %}
             {% set column_1 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==2 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_2 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==3 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_3 %}
               {{ column|raw }}          
             {% endset %}
           {% else %}
-            {% set column = keep_image(column, 'nothing') %}
             {% set column_4 %}
                {{column_4}}<li>{{ column|raw }}</li>          
             {% endset %}
@@ -199,33 +171,26 @@
       
         {% for row in rows %}     
           {% set column %}
-            {% spaceless %}
-              {{ row.content }}
-            {% endspaceless %}
+            {{ row.content }}
           {% endset %}        
           
           {% if loop.index==1 %}
-            {% set column = keep_image(column, 'medium') %}
             {% set column_1 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==2 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_2 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==3 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_3 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==4 %}
-            {% set column = keep_image(column, 'medium') %}
             {% set column_4 %}
               {{ column|raw }}          
             {% endset %} 
           {% else %}
-            {% set column = keep_image(column, 'nothing') %}
             {% set column_5 %}
                {{column_5}}<li>{{ column|raw }}</li>          
             {% endset %}
@@ -246,38 +211,30 @@
       
         {% for row in rows %}     
           {% set column %}
-            {% spaceless %}
-              {{ row.content }}
-            {% endspaceless %}
+            {{ row.content }}
           {% endset %}        
           
           {% if loop.index==1 %}
-            {% set column = keep_image(column, 'medium') %}
             {% set column_1 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==2 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_2 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==3 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_3 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==4 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_4 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==5 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_5 %}
               {{ column|raw }}          
             {% endset %}     
           {% else %}
-            {% set column = keep_image(column, 'nothing') %}
             {% set column_6 %}
                {{column_6}}<li>{{ column|raw }}</li>          
             {% endset %}
@@ -299,38 +256,30 @@
 
         {% for row in rows %}     
           {% set column %}
-            {% spaceless %}
-              {{ row.content }}
-            {% endspaceless %}
+            {{ row.content }}
           {% endset %}        
           
           {% if loop.index==1 %}
-            {% set column = keep_image(column, 'medium') %}
             {% set column_1 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==2 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_2 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==3 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_3 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==4 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_4 %}
               {{ column|raw }}          
             {% endset %}          
           {% elseif loop.index==5 %}
-            {% set column = keep_image(column, 'small') %}
             {% set column_5 %}
               {{ column|raw }}          
             {% endset %}     
           {% elseif loop.index==6 or loop.index==7 or loop.index==8 %}
-            {% set column = keep_image(column, 'nothing') %}
             {% set column_6 %}
                {{column_6}}<li>{{ column|raw }}</li>          
             {% endset %}
