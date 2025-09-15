@@ -1,0 +1,174 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMON
+----------------------------------------------------------------*/
+.post.with-image .category {
+  position: absolute;
+  left: 1.875rem;
+  top: 1.875rem;
+}
+
+.post.teaser.list.with-image .category {
+  left: -10px;
+  top: 175px;
+}
+
+.post .meta {
+  padding: 0.9375rem 0;
+  margin-bottom: 1.875rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post .meta .author,
+.post .meta .date,
+.post .meta .comment {
+  float: left;  
+  width: 50%;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post .meta .date {
+  padding-left: 1.25rem;
+}
+
+.post .meta .comment {
+  padding-left: 1.25rem;
+  border-right: 0;
+}
+
+.post .meta .lowercase {
+  display: block;
+  font-weight: normal;
+}
+
+.post .user-picture {
+  float: left;
+  padding-right: 1.25rem;
+}
+
+@media screen and (min-width: 40em) {
+  .post .meta .author,
+  .post .meta .date,
+  .post .meta .comment {
+    width: 33.33333%;
+  }
+}
+
+/* TEASER
+----------------------------------------------------------------*/
+.post.teaser {
+  position: relative;
+  padding-bottom: 1.875rem;
+  margin-bottom: 1.875rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post.teaser.list {  
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.post.teaser .image-default {
+  position: relative;
+}
+
+.post.teaser.list .image-default {
+  width: 210px;
+}
+
+.post.teaser .image-default a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.post.teaser .image-default a:hover::after {
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+.post.teaser .image-default img {
+  width: 100%;
+}
+
+.post.teaser .title {
+  font-size: 1.25rem;
+  margin-bottom: 1.875rem;
+}
+
+.post.teaser .content {
+  margin-bottom: 1.875rem;
+}
+
+.post.teaser .read-more a {
+  font-size: 0.6875rem;
+  padding: 0.875rem 1.5rem;
+  margin-bottom: 0;
+  border-color: rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 40em) {
+  .post.teaser .title {
+    font-size: 1.9375rem;
+  }
+
+  .post.teaser.list .image-default {
+    float: left;
+    margin-right: 1.875rem;
+  }
+}
+
+/* FULL
+----------------------------------------------------------------*/
+.post.full {
+  position: relative;
+}
+
+.post.full > header {
+  margin-bottom: 2.5rem;
+}
+
+.post.full > header .title {
+  margin-bottom: 1.875rem;
+}
+
+.post.full .summary {
+  font-size: 1.125rem;
+  font-weight: 300;
+  font-style: italic;
+  padding: 0 1.25rem;
+  margin-bottom: 1.875rem;
+}
+
+.post.full aside {
+  padding-top: 1.25rem;
+}
+
+.post.full .content-main {
+  margin-bottom: 3.75rem;
+}
+
+@media screen and (min-width: 64em) {
+  .post.full > .content > .row > .column:first-child {
+    padding-left: 2.8125rem;
+  }
+}

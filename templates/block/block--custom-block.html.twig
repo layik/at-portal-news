@@ -1,0 +1,355 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+
+{% import 'block--macros.html.twig' as block_macro %}
+
+{# BASIC SETTING   
+----------------------------------------------------------------#}
+{% set pattern = block_content.field_block_pattern.value %}
+{% set reveal = block_content.field_block_reveal.value %} 
+{% set padding = block_content.field_block_padding.value %}
+{% set margin = block_content.field_block_margin.value %}
+{% set style %}{% spaceless %}{{ block_macro.block_style(block_content, content) }}{% endspaceless %}{% endset %}
+{% set equal_height = block_content.field_merging_col_height.value %}  
+
+{% if reveal %}    
+  {% set reveal_setting %} {% spaceless %}{{ block_macro.block_reveal(block_content) }}{% endspaceless %}{% endset %}
+{% endif %}
+{% if padding == true %}
+  {% set padding_setting = ' with-padding' %}  
+{% else %}
+  {% set padding_setting = ' without-padding' %}
+{% endif %}
+{% if margin == true %}
+  {% set margin_setting = ' with-margin' %}
+{% endif %}
+{% if style %}    
+  {% set style_setting %} style="{{ style }}"{% endset %}
+{% endif %}
+
+{% if block_content.field_merging_type.value is not empty %}
+
+  {# PRINT MERGING BLOCK   
+  ----------------------------------------------------------------#}
+  {% set mergin_type = block_content.field_merging_type.value %} 
+
+  {% if mergin_type =='horizontal' %}    
+    {% set merging_even = block_content.field_merging_col_width.value %}
+    {% set merging_collapse = block_content.field_merging_collapse.value %}
+    {% set filter = block_content.field_background_filter.value %}
+    {% set class_setting %} {{ pattern }}{% if filter %} with-filter {{ filter }}{% endif %}{{ padding_setting }}{{ margin_setting }}{% if merging_collapse==false %} without-collapse{% endif %}{% endset %}
+    
+    {% set column_count = 0 %}
+    {% for i in 1..6 %}
+      {% if content['field_merging_col_' ~ i]|render %}
+        {% set column_count = column_count + 1 %}
+      {% endif %}
+    {% endfor %}
+    {% set merging_setting %}{% spaceless %}{{ block_macro.block_merging_class(block_content, column_count, merging_even) }}{% endspaceless %}{% endset %}
+
+    <div id="{{ attributes.id }}" class="block block-custom block-merging merging-horizontal{{ reveal_setting }} {{ attributes.class }}">
+      <div class="inner{{ class_setting }}"{{ style_setting }}>
+        {{ block_macro.block_title(block_content, title_prefix, title_suffix, mergin_type ) }}
+        {{ block_macro.block_body(block_content, content, mergin_type) }}
+        
+        <div class="{{ merging_setting }}"{% if equal_height %} data-equalizer{% endif %}>        
+          {% if merging_even == true or column_count == 1 or column_count > 4 %}          
+            {% if column_count == 1 %}
+              {{ content['field_merging_col_1'] }}
+            {% else %}
+              {% for i in 1..6 %}
+                {% if content['field_merging_col_' ~ i]|render %}
+                  <div class="column">
+                    {{ content['field_merging_col_' ~ i] }}
+                  </div>
+                {% endif %}
+              {% endfor %} 
+            {% endif %}      
+          {% else %}          
+            {% for i in 1..4 %}
+              {% if content['field_merging_col_' ~ i]|render %}
+                {% if content['field_merging_col_size_m_' ~ i]|render %}
+                  <div class="{{ content['field_merging_col_size_m_' ~ i] }} {{ content['field_merging_col_size_l_' ~ i] }} column">
+                    {{ content['field_merging_col_' ~ i] }}
+                  </div>
+                {% else %}
+                  {% if column_count == 3 and i == 3 %}
+                    <div class="{{ content['field_merging_col_size_l_' ~ i] }} column">
+                      {{ content['field_merging_col_' ~ i] }}
+                    </div>
+                  {% else %}
+                    <div class="medium-6 {{ content['field_merging_col_size_l_' ~ i] }} column">
+                      {{ content['field_merging_col_' ~ i] }}
+                    </div>
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}  
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% elseif mergin_type =='tab' %}
+    {% set mergin_width = block_content.field_merging_width.value %} 
+    {% set filter = block_content.field_background_filter.value %}
+    {% set class_setting %}{% if filter %} with-filter {{ filter }}{% endif %}{{ padding_setting }}{{ margin_setting }}{% endset %}
+    <div id="{{ attributes.id }}" class="block block-custom block-merging merging-tab{{ reveal_setting }}">         
+      <div class="inner{{ class_setting }}"{{ style_setting }}>
+        <div class="{{ mergin_width }} row collapse">
+          {{ content.field_merging_tab }}
+        </div>
+      </div>
+    </div>
+  {% else %} 
+    {% set class_setting %} {{ padding_setting }}{{ margin_setting }}{% endset %}
+    <div id="{{ attributes.id }}" class="block block-custom block-merging merging-slider{{ reveal_setting }}">         
+      <div class="inner{{ class_setting }}"{{ style_setting }}>
+        {{ block_macro.block_title(block_content, title_prefix, title_suffix, mergin_type ) }}
+        {{ block_macro.block_body(block_content, content, mergin_type) }}
+        <div class="showcase showcase-merging">          
+          {{ content.field_merging_slider }}          
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+{% else %}
+
+  {# PRINT CUSTOM BLOCK & ATTACHMENT
+  ----------------------------------------------------------------#}    
+  {% set display = block_content.field_block_display.value %}
+  {% set mergin_width = block_content.field_merging_width.value %} 
+  {% set media_position_h = block_content.field_media_position_horizontal.value %}
+  {% set media_position_v = block_content.field_media_position_vertical.value %}
+  {% set media_float = block_content.field_media_float.value %}
+  {% set filter = block_content.field_background_filter.value %}
+  {% set url = block_content.field_link.uri %}  
+  {% set url_target = block_content.field_link_target_blank.value %}
+  {% set class_setting %} {{ display }} {{ pattern }}{% if filter %} with-filter {{ filter }}{% endif %}{{ padding_setting }}{{ margin_setting }}{% endset %}
+  
+  {% if block_content.field_block_attachment.value is not empty %}
+    {% set attachment = true %}
+  {% else %}
+    {% set attachment = false %}
+  {% endif %}
+
+  <div id="{{ attributes.id }}" class="block block-custom{{ reveal_setting }} {{ attributes.class }}">        
+    <div class="inner{{ class_setting }}"{{ style_setting }}{% if equal_height %} data-equalizer-watch{% endif %}> 
+      {% if mergin_width == 'unexpended' %}
+        <div class="column row">
+      {% endif %}
+
+      {% if display == 'display-1' %}
+
+        {% if media_position_h == 'default' or (media_position_h != 'default' and media_float == true) %}
+          {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}          
+          {{ block_macro.block_media(block_content, content) }}  
+          {% if attachment %}       
+            {{ content.field_block_attachment }}             
+          {% else %}
+            {{ block_macro.block_body(block_content, content) }}
+          {% endif %}
+        {% endif %}
+        {% if media_position_h == 'left' and media_float == false %}
+          {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}
+          <div class="media-object stack-for-small">
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+            <div class="media-object-section section-content">
+              {% if attachment %}       
+                {{ content.field_block_attachment }}             
+              {% else %}
+                {{ block_macro.block_body(block_content, content) }}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}  
+        {% if media_position_h == 'right' and media_float == false %}
+          {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}
+          <div class="media-object stack-for-small">
+            <div class="media-object-section section-content">
+              {% if attachment %}       
+                {{ content.field_block_attachment }}             
+              {% else %}
+                {{ block_macro.block_body(block_content, content) }}
+              {% endif %}
+            </div>
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+          </div>
+        {% endif %}    
+
+      {% elseif display == 'display-2' %}
+
+        {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}
+        {% if attachment %}       
+          {{ content.field_block_attachment }}             
+        {% else %}
+          {{ block_macro.block_body(block_content, content) }}
+        {% endif %}
+        {{ block_macro.block_media(block_content, content) }}
+
+      {% elseif display == 'display-3' %}
+
+        {% if media_position_h == 'default' or (media_position_h != 'default' and media_float == true) %}
+          {{ block_macro.block_media(block_content, content) }}
+          {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}                    
+          {% if attachment %}       
+            {{ content.field_block_attachment }}             
+          {% else %}
+            {{ block_macro.block_body(block_content, content) }}
+          {% endif %}
+        {% endif %}
+        {% if media_position_h == 'left' and media_float == false %}         
+          <div class="media-object stack-for-small">
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+            <div class="media-object-section section-content">
+              {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}
+              {% if attachment %}       
+                {{ content.field_block_attachment }}             
+              {% else %}
+                {{ block_macro.block_body(block_content, content) }}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}  
+        {% if media_position_h == 'right' and media_float == false %}
+          <div class="media-object stack-for-small">
+            <div class="media-object-section section-content">
+              {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}
+              {% if attachment %}       
+                {{ content.field_block_attachment }}             
+              {% else %}
+                {{ block_macro.block_body(block_content, content) }}
+              {% endif %}
+            </div>
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+          </div>
+        {% endif %}     
+
+      {% elseif display == 'display-4' %}
+
+        {% if media_position_h == 'default' or (media_position_h != 'default' and media_float == true) %}
+          {{ block_macro.block_media(block_content, content) }}
+          {% if attachment %}       
+            {{ content.field_block_attachment }}             
+          {% else %}
+            {{ block_macro.block_body(block_content, content) }}
+          {% endif %}
+          {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}  
+        {% endif %}
+        {% if media_position_h == 'left' and media_float == false %}         
+          <div class="media-object stack-for-small">
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+            <div class="media-object-section section-content">
+              {% if attachment %}       
+                {{ content.field_block_attachment }}             
+              {% else %}
+                {{ block_macro.block_body(block_content, content) }}
+              {% endif %}
+              {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}              
+            </div>
+          </div>
+        {% endif %}  
+        {% if media_position_h == 'right' and media_float == false %}
+          <div class="media-object stack-for-small">
+            <div class="media-object-section section-content">
+              {% if attachment %}       
+                {{ content.field_block_attachment }}             
+              {% else %}
+                {{ block_macro.block_body(block_content, content) }}
+              {% endif %}
+              {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}              
+            </div>
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+          </div>
+        {% endif %}        
+
+      {% elseif display == 'display-5' %}
+
+        {% if attachment %}       
+          {{ content.field_block_attachment }}             
+        {% else %}
+          {{ block_macro.block_body(block_content, content) }}
+        {% endif %}
+        {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}        
+        {{ block_macro.block_media(block_content, content) }}
+
+      {% else %}
+
+        {% if media_position_h == 'default' or (media_position_h != 'default' and media_float == true) %}
+          {% if attachment %}       
+            {{ content.field_block_attachment }}             
+          {% else %}
+            {{ block_macro.block_body(block_content, content) }}
+          {% endif %}        
+          {{ block_macro.block_media(block_content, content) }}             
+          {{ block_macro.block_title(block_content, title_prefix, title_suffix ) }} 
+        {% endif %}
+        {% if media_position_h == 'left' and media_float == false %}     
+          {% if attachment %}       
+            {{ content.field_block_attachment }}             
+          {% else %}
+            {{ block_macro.block_body(block_content, content) }}
+          {% endif %}   
+          <div class="media-object stack-for-small">
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+            <div class="media-object-section section-content">              
+              {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}              
+            </div>
+          </div>
+        {% endif %}  
+        {% if media_position_h == 'right' and media_float == false %}
+          {% if attachment %}       
+            {{ content.field_block_attachment }}             
+          {% else %}
+            {{ block_macro.block_body(block_content, content) }}
+          {% endif %} 
+          <div class="media-object stack-for-small">
+            <div class="media-object-section section-content">
+              {{ block_macro.block_title(block_content, title_prefix, title_suffix) }}              
+            </div>
+            <div class="media-object-section {{media_position_v}}">
+              {{ block_macro.block_media(block_content, content) }}              
+            </div>
+          </div>
+        {% endif %}    
+
+      {% endif %}
+
+      {% if url and filter %}
+        <a href="{{ url }}" class="cover" {% if url_target %} target="_blank"{% endif %}></a>
+      {% endif %}
+
+      {% if mergin_width == 'unexpended' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

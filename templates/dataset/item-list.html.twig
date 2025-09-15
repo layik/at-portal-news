@@ -1,0 +1,35 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+<div class="search-result">
+  {% if context.list_style %}
+    {%- set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
+  {% endif %}
+  {% if items or empty %}
+    {%- if title is not empty -%}
+      <h3>{{ title }}</h3>
+    {%- endif -%}
+    {%- if items -%}
+      <{{ list_type }}{{ attributes }}>
+        {%- for item in items -%}
+          <li{{ item.attributes }}>{{ item.value }}</li>
+        {%- endfor -%}
+      </{{ list_type }}>
+    {%- else -%}
+      {{- empty -}}
+    {%- endif -%}
+  {%- endif %}
+</div>

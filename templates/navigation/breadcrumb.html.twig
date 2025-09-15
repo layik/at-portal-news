@@ -1,0 +1,35 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+{% set size = breadcrumb|length %}
+{% if breadcrumb and size > 1 %}
+  <div id="breadcrumb">
+    <nav aria-label="You are here:" aria-labelledby="system-breadcrumb" role="navigation">
+      <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
+      <ul class="breadcrumbs">
+      {% for item in breadcrumb %}
+        <li>
+          {% if item.url %}
+            <a href="{{ item.url }}">{{ item.text }}</a>
+          {% else %}
+            {{ item.text }}
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    </nav>
+  </div>
+{% endif %}

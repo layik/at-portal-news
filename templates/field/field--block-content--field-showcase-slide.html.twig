@@ -1,0 +1,72 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+{% set run = false %}
+{% set type = '' %}
+{% for item in items if run == false %}
+  {% set block = item.content['#block_content'] %}
+  {% set type = block.field_showcase_type.value %}
+  {% set run = true %}
+{% endfor %}
+
+{% if type == 'showcase-1' %}  
+  {% for item in items %}  
+    {% set block = item.content['#block_content'] %}   
+    {% set url = block.field_link.uri %}    
+    {% set image %}{{ item.content.field_background_image|raw }}{% endset %}
+    {% if 'internal' in url %}
+      {% set url %}{{ url('<front>') }}{{ url[10:] }}{% endset %}
+    {% endif %}
+
+    <div>
+      <div class="slide"> 
+        <div class="inner">          
+          <div class="cover">
+            {% if url %}<a href="{{ url }}" target="_blank">{% endif %}<img data-lazy="{{ background_image_path(image) }}"/>{% if url %}</a>{% endif %}
+          </div>
+          {% if item.content.body|render %}
+            <div class="slide-content">
+              <div class="meta">{% if url %}<a href="{{ url }}" class="read-more float-right show-for-medium" target="_blank">read more <span class="fa fa-long-arrow-right"></span></a>{% endif %} By {{ item.content.field_author }} {{ item.content.field_date }}</div>              
+              {{ item.content.body }}
+            </div>
+          {% endif %}      
+        </div> 
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+<div class="large-4 column">
+  <div class="showcase showcase-pager pager-1">
+    {% for item in items %}  
+      <div>
+        <div class="slide"> 
+          <div class="inner">
+            <div class="content">
+              <div class="meta">
+                <div class="term float-right">{{ item.content.field_category }}</div>
+                <div class="number">0{{loop.index}}.</div>
+              </div>
+              <h4 class="title">{{ item.content.field_title }}</h4>
+            </div>
+          </div> 
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+{% endif %}

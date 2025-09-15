@@ -1,0 +1,425 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* GENERAL
+----------------------------------------------------------------*/
+body {
+  font-family: 'Open Sans', Arial, Helvetica, Sans-Serif;  
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', Georgia, Serif;  
+  font-weight: 900;
+}
+
+.meta {
+  font-size: 0.6875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+}
+
+a {
+  transition: color .25s ease-out;
+}
+
+p {
+  line-height: 1.8;
+}
+
+blockquote, blockquote p {
+  color: inherit;
+  border-color: inherit;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.user-picture img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all .5s ease-in-out;
+}
+
+.user-picture img:hover {
+  filter: gray;
+  filter: grayscale(1); 
+  -webkit-filter: grayscale(1); 
+}
+
+.image-default {
+  margin-bottom: 1.875rem;
+}
+
+.image-default.float-left {
+  margin-right: 1.875rem;
+}
+
+.image-default.float-right {
+  margin-left: 1.875rem;
+}
+
+.category a {
+  display: inline-block;
+  font-family: 'Merriweather', Georgia, Serif; 
+  font-size: 0.9375rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.625rem 0.9375rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.5s ease-in-out;
+  font-size: 0.875rem;
+  padding: 0.3125rem 0.625rem;
+}
+
+.category.small a {
+  font-weight: 400;
+  font-size: 0.75rem;
+  padding: 0.3125rem 0.5rem;
+}
+
+/* PAGE 
+----------------------------------------------------------------*/
+.off-canvas-wrapper, .off-canvas-wrapper-inner, .off-canvas-content {
+  min-height: 100%;
+}
+
+.off-canvas-content {
+  padding: 0;
+  box-shadow: none;
+}
+
+.off-canvas {
+  background-color: transparent;
+}
+
+.off-canvas.position-left {
+  left: -300px;
+  width: 300px;
+}
+
+.is-open-left {
+  -webkit-transform: translateX(300px);
+  transform: translateX(300px);
+}
+
+.js-off-canvas-exit {
+  opacity: 0;
+}
+
+#page {
+  height: 100%;
+  overflow: hidden;
+}
+
+#primary {
+  padding: 1.25rem;
+}
+
+@media screen and (min-width: 40em) {
+  #primary {
+    padding: 1.875rem;
+  }
+}
+
+#headline, 
+#main-top > div, 
+#main-middle, 
+#main-bottom > div {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (min-width: 64em) {
+  #main-top-middle > .inner > .row ,
+  #main-bottom-middle > .inner > .row {
+    display: -ms-flexbox;
+    display: flex;  
+    width: 100%;
+  }
+
+  #main-middle > .inner > .row {
+    display: -ms-flexbox;
+    display: flex;  
+    width: 100%;
+  }
+
+  #main-top-middle .column,
+  #main-bottom-middle .column {
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #main-top-middle .column:first-child,
+  #main-bottom-middle .column:first-child {
+    border-left: 0;
+  }
+
+  #secondary {
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  #tertiary {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+.inner.wrapper {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 64em) {
+  .inner.wrapper {
+    width: 64rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .inner.wrapper {
+    width: 75rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .inner.wrapper {
+    width: 90rem;
+  }
+}
+
+/* CONTENT
+----------------------------------------------------------------*/
+/* Content Title
+---------------------------------*/
+#content-title:lang(en) {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1875rem;
+  margin-bottom: 1.875rem; 
+}
+
+#content-title:lang(en): first-letter {
+  text-transform: capitalize;
+}
+
+.page-user #content-title {
+  text-align: center;
+}
+
+/* Content Tab
+---------------------------------*/
+#content-tab {
+  margin-bottom: 1.875rem;
+}
+
+#content-tab ul {
+  display: inline-block;
+}
+
+#content-tab li a {
+  font-size: 0.75rem;
+  padding: 0.625rem 1.25rem;
+  margin-right: 1px;
+  transition: all 0.5s ease-in-out;
+}
+
+#content-tab li:first-child a {
+  border-radius: 0.1875rem 0 0 0.1875rem;
+}
+
+#content-tab li:last-child a {
+  margin: 0;
+  border-radius: 0 0.1875rem 0.1875rem 0;
+}
+
+@media screen and (min-width: 40em) {
+  #content-tab li a {
+    padding: 0.9375rem 1.875rem;
+  }
+}
+
+/* Breadcrumb & Message
+---------------------------------*/
+#breadcrumb,
+.status-message {
+  margin-bottom: 1.875rem;
+}
+
+/* Pager
+---------------------------------*/
+.pager { 
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pager ul {
+  margin-top: -1px;
+}
+
+.pager ul a {
+  font-size: 0.75rem;
+  padding: 0.625rem;
+  text-transform: uppercase;
+}
+
+.pager ul a:hover,
+.pager ul .current a {
+  border-top-width: 1px;
+  border-top-style: solid;
+  background-color: transparent;
+}
+
+.pager ul .current {
+  padding: 0;  
+  background-color: transparent;
+}
+
+/* FOOTER & CLOSURE
+----------------------------------------------------------------*/
+#footer {
+  font-size: 0.875rem;
+}
+
+#footer .menu > li > a {
+  padding-left: 0;
+}
+
+#closure {
+  padding-bottom: 1.875rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#closure > div {
+  position: relative;  
+}
+
+#site-info-alter {
+  margin-top: -1.25rem;
+}
+
+#site-info-alter .site-name,
+#site-info-alter .site-logo {
+  display: inline-block;
+  padding: 0 1.875rem;
+}
+
+.design-by {
+  position: absolute;
+  top: 3.75rem;
+  right: 1.25rem;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  padding: 0.625rem 0;
+}
+
+/* SEARCH RESULT
+----------------------------------------------------------------*/
+.search-result ol li {
+  padding-bottom: 0.625rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.search-result ol li:last-child {
+  border: none;
+}
+
+/* SHARE
+----------------------------------------------------------------*/
+.share h3.title {
+  font-size: 1.125rem;
+  font-weight: 900;
+  margin-bottom: 1.875rem;
+}
+
+.addtoany_list {
+  display: inline-block;
+  line-height: 1 !important;
+}
+
+.addtoany_list a {
+  display: inline-block;
+  float: left;
+  width: 60px;
+  height: 74px;
+  line-height: 74px;
+  text-align: center;
+  padding: 0; 
+  margin: 0;
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.addtoany_list a:hover span {
+  opacity: 1;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .share {
+    margin: 0 auto;
+  }
+}
+
+/* ASIDE
+----------------------------------------------------------------*/
+aside .block > .inner {
+  padding: 1.875rem 0;
+}
+
+aside .block > .inner .title h3 {
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* FILTER
+----------------------------------------------------------------*/
+.with-filter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: opacity .5s ease-out;
+  background-color: inherit;
+}
+
+.with-filter > div {
+  position: relative;
+}
+
+.with-filter a {
+  color: inherit;
+}
+
+.with-filter a.button {
+  position: relative;
+  z-index: 1;
+}
+
+a.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}

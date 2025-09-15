@@ -1,0 +1,111 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMON
+----------------------------------------------------------------*/
+.form-item, .form-actions {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+form .description {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+details {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+details > .form-item {
+  padding: 0 1.5rem;
+}
+
+label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  margin-bottom: 0.625rem;
+}
+
+/* LOGIN & REGISTER FORM
+----------------------------------------------------------------*/
+#user-login-form input[type="text"],
+#user-login-form input[type="password"],
+#user-register-form input[type="text"],
+#user-register-form input[type="email"],
+#user-pass input[type="text"] {
+  color: inherit;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: none;
+  background-color: transparent; 
+}
+
+#user-login-form input[type="text"]:focus,
+#user-login-form input[type="password"]:focus,
+#user-register-form input[type="text"]:focus,
+#user-register-form input[type="email"]:focus,
+#user-pass input[type="text"]:focus {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+#user-pass p {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* CUSTOM CONTACT FORM
+----------------------------------------------------------------*/
+.block.block-contact-block > .inner {
+  padding: 0;
+}
+
+.custom-contact label {
+  display: none;
+}
+
+.custom-contact textarea,
+.custom-contact input[type="text"] {
+  color: inherit;
+  font-size: 0.875rem;
+  padding: 0.9375rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-contact textarea:focus,
+.custom-contact input[type="text"]:focus {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-contact > .column:last-child label {
+  margin-bottom: 3px;
+}
+
+.block-contact-block .form-actions {
+  text-align: center;
+  padding: 0 0.9375rem;
+}
+
+.block-contact-block input[type=submit] {
+  margin-top: 1.25rem;
+}

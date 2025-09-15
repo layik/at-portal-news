@@ -1,0 +1,147 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMON
+----------------------------------------------------------------*/
+#header-top {
+  height: 75px;
+  padding: 0.9375rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#header-middle {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#header-bottom {
+  height: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#header-top > .inner > div,
+#header-middle > .inner > div,
+#header-bottom > .inner > div {
+  padding: 0 1.875rem;
+}
+
+#site-info {
+  position: relative;
+}
+
+.site-name h1 {
+  font-size: 1.9375rem;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+}
+
+.site-slogan {
+  display: none;
+  font-size: 0.75rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+#menu-mobile .site-slogan {
+  display: none;
+}
+
+.site-logo a {
+  outline: none;
+}
+
+@media screen and (min-width: 40em) {
+  #header > .inner {
+    height: 100px;
+    padding: 1.25rem 0;
+  }
+
+  .site-name h1 {
+    font-size: 1.9375rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .site-slogan {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .site-name h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* SOCIAL MEDIA
+----------------------------------------------------------------*/
+#mobile-button, #menu-sub {
+  padding-top: 0.3125rem;
+}
+
+#menu-sub a.button {
+  font-weight: bold;
+  padding: 0.625rem 1.25rem;
+  margin-bottom: 0;
+}
+
+#menu-sub a.login {
+  margin-right: 0.625rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* REVEAL SEARCH
+----------------------------------------------------------------*/
+#site-search {
+  padding: 0.5rem 0 0 1.25rem;
+}
+
+#site-search form {
+  position: relative;
+}
+
+#site-search .form-item, 
+#site-search .form-actions {
+  margin: 0;
+}
+
+#site-search [type=search] { 
+  font-size: 0.875rem;
+  height: 34px;
+  padding: 0.3125rem 0.9375rem;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 5px;
+  border-color: rgba(0, 0, 0, 0.05);
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+#site-search [type=search]:focus {
+  width: 100%;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+#site-search label,
+#site-search input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1;
+  padding: 0.625rem 0.75rem;
+  margin-bottom: 0;
+  background-color: transparent;
+}

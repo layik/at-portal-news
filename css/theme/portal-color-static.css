@@ -1,0 +1,404 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* GENERAL
+----------------------------------------------------------------*/
+.site-slogan,
+#content-tab li a,
+#main-top .title h3,
+#secondary .title h3,
+#main-bottom-upper .title h3,
+.category a {
+  color: #fff;
+}
+
+#main-bottom-upper .title h3:before {  
+  background-color: #fff;
+}
+
+#content-tab li a {
+  background-color: #2199e8;
+}
+
+#footer,
+#footer .title h3,
+#footer nav h2,
+#footer .menu > li > a {
+  color: #696969;
+}
+
+/* Menu
+---------------------------------*/
+#menu-primary a,
+#mobile-button button,
+#menu-mega ul.dropdown > li > a {
+  color: #fff;
+}
+
+.mega-menu,
+.mega-menu nav h2,
+.block .block-mega-menu h4 a {
+  color: #696969;
+}
+
+.block .block-mega-menu h4 a:hover {
+  color: #999999;
+}
+
+#mobile-button button {
+  border-color: #fff;
+}
+
+/* Showcase
+---------------------------------*/
+.slick-dots li button:before,
+.showcase-category .slide .term a,
+.showcase-category .slide .description {
+  color: #fff;
+}
+
+.showcase-pager .slide {
+  color: #696969;
+}
+
+.showcase-pager .slick-current .slide,
+.showcase-pager .slide:hover {
+  color: #999999;
+}
+
+.showcase-pager .slick-prev,
+.showcase-pager .slick-next {
+  background-color: #2199e8;
+} 
+
+.showcase-pager .slick-prev:hover,
+.showcase-pager .slick-next:hover  {
+  background-color: #f55152;
+} 
+
+/* View
+---------------------------------*/
+.view.page-post-category .column-large .content h3 a,
+.view.page-post-category .column-medium .content h3 a,
+.view.page-post-category .column-large .meta.date,
+.view.page-post-category .column-medium .meta.date,
+.view.page-post-category .column-large .author,
+.view.page-post-category .column-medium .author,
+.view.page-post-category .column-large .author a,
+.view.page-post-category .column-medium .author a,
+.block-post-headline .column-1 .content h3 a,
+.block-post-headline .column-2 .content h3 a,
+.block-post-headline .column-1 .author,
+.block-post-headline .column-2 .author,
+.block-post-popular .column-1 .content h4 a,
+.block-post-most li:before {  
+  color: #fff;
+}
+
+.block-post-feature .slide,
+.block-views .block-post-feature h4 a,
+.block-post-popular h4 a,
+.block-post-popular .meta,
+.block-post-popular .author a {
+  color: #696969;
+}
+
+.block-views .block-post-feature h4 a:hover,
+.block-post-popular h4 a:hover,
+#author {
+  color: #999999;
+}
+
+/* Search
+---------------------------------*/
+#reveal-search input[type="submit"] {
+  color: #8a8a8a;
+}
+
+#reveal-search input::-webkit-input-placeholder {
+  color: #8a8a8a; 
+}
+
+#reveal-search input::-moz-placeholder {
+  color: #8a8a8a; 
+}
+
+#reveal-search input:-ms-input-placeholder {
+  color: #8a8a8a; 
+}
+
+#reveal-search input::placeholder {
+  color: #8a8a8a; 
+}
+
+#reveal-search [type=search],
+#reveal-search input[type="submit"]:hover,
+#reveal-search .close-button:hover {
+  color: #ffffff;
+}
+
+#reveal-search [type=search]:focus {
+  border-color: #ffffff;
+}
+
+/* BUILT-IN COLOR
+----------------------------------------------------------------*/
+.button.link.primary {
+  color: #2199e8; 
+}
+
+.button.link.primary:hover, .button.link.primary:focus {
+  color: #147cc0;
+}
+
+.button.link.secondary {
+  color: #777; 
+}
+
+.button.link.secondary:hover, .button.link.secondary:focus {
+  color: #5f5f5f;
+}
+
+.button.link.success {
+  color: #3adb76; 
+}
+
+.button.link.success:hover, .button.link.success:focus {
+  color: #22bb5b;
+}
+
+.button.link.alert {
+  color: #ec5840; 
+}
+
+.button.link.alert:hover, .button.link.alert:focus {
+  color: #da3116;
+}
+
+.button.link.warning {
+  color: #ffae00; 
+}
+
+.button.link.warning:hover, .button.link.warning:focus {
+  color: #cc8b00;
+}
+
+.button.link.ghost {
+  color: #fff; 
+}
+
+.button.link.ghost:hover, .button.link.ghost:focus {
+  color: #ccc;
+}
+
+.button.hollow.ghost {
+  color: #fff; 
+  border: 2px solid #fff;
+}
+
+.button.hollow.ghost:hover, .button.hollow.ghost:focus {
+  color: #ccc; 
+  border-color: #ccc;
+}
+
+.red-alizarin { 
+  background-color: #e74c3c;
+}
+
+.red-pomegranate {
+  background-color: #c0392b;
+}
+
+.pink-red {
+  background-color: #F62459;
+}
+
+.pink-raspberry {
+  background-color: #DB0A5B;
+}
+
+.purple-amethyst {
+  background-color: #9b59b6;
+}
+
+.purple-wisteria {
+  background-color: #8e44ad;
+}
+
+.blue-sky {
+  background-color: #3498db;
+}
+
+.blue-royal {
+  background-color: #2980b9;
+}
+
+.blue-ocean {
+  background-color: #0c2058;
+}
+
+.blue-ink {
+  background-color: #08153a;
+}
+
+.cyan-turquoise {
+  background-color: #1abc9c;
+}
+
+.cyan-sea {
+  background-color: #16a085;
+}
+
+.green-emerald {
+  background-color: #2ecc71;
+}
+
+.green-jade {
+  background-color: #27ae60;
+}
+
+.yellow-can {
+  background-color: #F5D76E;
+}
+
+.yellow-sunflower {
+  background-color: #f1c40f;
+}
+
+.orange-orange {
+  background-color: #f39c12;
+}
+
+.orange-carrot {
+  background-color: #e67e22;
+}
+
+.gray-smoke {
+  background-color: #888888;
+}
+
+.gray-silver {
+  background-color: #666666;
+}
+
+.black-midnight {
+  background-color: #222222;
+}
+
+.black-eclipse {
+  background-color: #000000;
+}
+
+.gradient-rose-water::before {
+  background: #E55D87; 
+  background: -webkit-linear-gradient(to left, #E55D87 , #5FC3E4);
+  background: linear-gradient(to left, #E55D87 , #5FC3E4);
+}
+
+.gradient-lemon-twist::before {
+  background: #3CA55C;
+  background: -webkit-linear-gradient(to left, #3CA55C , #B5AC49);
+  background: linear-gradient(to left, #3CA55C , #B5AC49);        
+}
+
+.gradient-pinky::before {
+  background: #DD5E89;
+  background: -webkit-linear-gradient(to left, #DD5E89 , #F7BB97);
+  background: linear-gradient(to left, #DD5E89 , #F7BB97);         
+}
+
+.gradient-aqua-marine::before {
+  background: #1A2980; 
+  background: -webkit-linear-gradient(to left, #1A2980 , #26D0CE); 
+  background: linear-gradient(to left, #1A2980 , #26D0CE); 
+}
+
+.gradient-bora-bora::before {
+  background: #2BC0E4;
+  background: -webkit-linear-gradient(to left, #2BC0E4 , #EAECC6);
+  background: linear-gradient(to left, #2BC0E4 , #EAECC6);         
+}
+
+.gradient-peach::before {
+  background: #ED4264; 
+  background: -webkit-linear-gradient(to left, #ED4264 , #FFEDBC);
+  background: linear-gradient(to left, #ED4264 , #FFEDBC);        
+}
+
+.gradient-moonrise::before {
+  background: #DAE2F8;
+  background: -webkit-linear-gradient(to left, #DAE2F8 , #D6A4A4); 
+  background: linear-gradient(to left, #DAE2F8 , #D6A4A4);         
+}
+
+.gradient-blurry-beach::before {
+  background: #d53369; 
+  background: -webkit-linear-gradient(to left, #d53369 , #cbad6d); 
+  background: linear-gradient(to left, #d53369 , #cbad6d);                 
+}
+
+.gradient-miaka::before {
+  background: #FC354C; 
+  background: -webkit-linear-gradient(to left, #FC354C , #0ABFBC); 
+  background: linear-gradient(to left, #FC354C , #0ABFBC);                
+}
+
+.gradient-almost::before {
+  background: #ddd6f3;
+  background: -webkit-linear-gradient(to left, #ddd6f3 , #faaca8);
+  background: linear-gradient(to left, #ddd6f3 , #faaca8);               
+}
+
+.gradient-virgin::before {
+  background: #C9FFBF; 
+  background: -webkit-linear-gradient(to left, #C9FFBF , #FFAFBD); 
+  background: linear-gradient(to left, #C9FFBF , #FFAFBD);                       
+}
+
+.gradient-shore::before {
+  background: #70e1f5;
+  background: -webkit-linear-gradient(to left, #70e1f5 , #ffd194); 
+  background: linear-gradient(to left, #70e1f5 , #ffd194);               
+}
+
+.gradient-endless-river::before {
+  background: #43cea2;
+  background: -webkit-linear-gradient(to left, #43cea2 , #185a9d); 
+  background: linear-gradient(to left, #43cea2 , #185a9d);                        
+}
+
+.gradient-back-to-earth::before {
+  background: #00C9FF; 
+  background: -webkit-linear-gradient(to left, #00C9FF , #92FE9D);
+  background: linear-gradient(to left, #00C9FF , #92FE9D);                       
+}
+
+.gradient-green-and-blue::before {
+  background: #c2e59c; 
+  background: -webkit-linear-gradient(to left, #c2e59c , #64b3f4);
+  background: linear-gradient(to left, #c2e59c , #64b3f4);                               
+}
+
+.gradient-tranquil::before {
+  background: #EECDA3; 
+  background: -webkit-linear-gradient(to left, #EECDA3 , #EF629F); 
+  background: linear-gradient(to left, #EECDA3 , #EF629F);                       
+}
+
+.gradient-sweet-morning::before {
+  background: #FF5F6D; 
+  background: -webkit-linear-gradient(to left, #FF5F6D , #FFC371); 
+  background: linear-gradient(to left, #FF5F6D , #FFC371);                                 
+}

@@ -1,0 +1,319 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#}
+<div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      {% if page.primary_menu_mobile %}
+        <div id="menu-mobile"> 
+          <div class="site-info text-center">
+            {% if page.site_info %}          
+              {{ page.site_info }}
+            {% endif %}
+          </div>
+          <div class="menu-sub text-center">
+            <a class="button rounded login" href="{{ base_path }}user">Login</a>
+            <a class="button rounded register" href="{{ base_path }}user/register">Register</a>
+            <a class="button rounded search" data-toggle="reveal-search">Search</a>
+            <a class="button rounded close" aria-label="Close menu" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </a>
+          </div>  
+          {{ page.primary_menu_mobile }}
+          {% if page.social_media %}
+            <div class="social-media">
+              {{ page.social_media }}
+            </div>
+          {% endif %} 
+        </div>
+      {% endif %} 
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div id="page">
+        <header id="header">
+          <div id="header-top">
+            <div class="inner wrapper">
+              <div class="row collapse">
+                {% if page.social_media %}
+                  <div id="mobile-button" class="small-2 medium-3 large-1 column">
+                    <button type="button" data-toggle="offCanvas">menu</button>                  
+                  </div>
+                  <div id="social-media" class="large-3 column show-for-large">
+                    {{ page.social_media }}
+                  </div>
+                {% else %}
+                  <div id="mobile-button" class="small-2 medium-3 large-4 column">
+                    <button type="button" data-toggle="offCanvas">menu</button>                  
+                  </div>
+                {% endif %}
+                <div id="site-info" class="small-10 medium-6 large-4 column text-center">                  
+                  <div>
+                    {% if page.site_info %}          
+                      {{ page.site_info }}
+                    {% endif %}
+                  </div>
+                </div>
+                <div id="menu-sub" class="medium-3 large-4 column show-for-medium text-right">
+                  {% if logged_in %} 
+                    <a class="button rounded register show-for-large" href="{{ base_path }}user/Logout">Log Out</a>
+                  {% else %}
+                    <a class="button rounded login show-for-large" href="{{ base_path }}user">Login</a>
+                    <a class="button rounded register show-for-large" href="{{ base_path }}user/register">Sign Up</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="header-middle" class="show-for-large">
+            <div class="inner wrapper">
+              {% if page.primary_menu and page.primary_menu_mega == false %}
+                <div id="menu-primary">
+                  {{ page.primary_menu }}
+                </div>
+              {% endif %}
+              {% if page.primary_menu_mega %}
+                <div id="menu-mega">
+                  {{ page.primary_menu_mega }}
+                </div>
+              {% endif %}         
+            </div>  
+          </div> 
+          <div id="header-bottom" class="show-for-medium">
+            <div class="inner wrapper">
+              <div class="row collapse">
+                <div id="menu-secondary" class="large-8 column show-for-large">  
+                  {{ page.secondary_menu }}              
+                </div>
+                {% if page.search %}
+                  <div id="site-search" class="medium-6 large-4 column">  
+                    {{ page.search }}              
+                  </div>
+                {% endif %} 
+              </div>             
+            </div>  
+          </div> 
+          <div class="large reveal fast" id="reveal-search" data-reveal data-close-on-click="true" data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{ page.search }}
+          </div>         
+        </header>        
+        {% if page.headline %}
+          <div id="headline">
+            <div class="inner wrapper">
+              {{ page.headline }}
+            </div>
+          </div>
+        {% endif %}        
+        <div id="main">
+          {% if page.main_top_upper or page.main_top_lower or main_top_middle > 0 %}
+            <div id="main-top"> 
+              {% if page.main_top_upper %}
+                <div id="main-top-upper">
+                  <div class="inner">
+                    {{ page.main_top_upper }}
+                  </div>
+                </div> 
+              {% endif %} 
+              {% if main_top_middle > 0 %}
+                <div id="main-top-middle">
+                  <div class="inner wrapper">
+                    {% if main_top_middle == 2 %}
+                      <div class="row medium-up-2 collapse">
+                    {% elseif main_top_middle == 3 %}
+                      <div class="row medium-up-2 large-up-3 collapse">
+                    {% else %}
+                      <div class="row collapse">
+                    {% endif %}
+                      {% if page.main_top_one %}
+                        <div class="column">
+                          {{ page.main_top_one }}
+                        </div>
+                      {% endif %}
+                      {% if page.main_top_two %}
+                        <div class="column">
+                          {{ page.main_top_two }}
+                        </div>
+                      {% endif %}
+                      {% if page.main_top_three %}
+                        <div class="column">
+                          {{ page.main_top_three }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              {% if page.main_top_lower %}    
+                <div id="main-top-lower">
+                  <div class="inner wrapper">
+                    {{ page.main_top_lower }}
+                  </div>
+                </div>
+              {% endif %} 
+            </div> 
+          {% endif %}
+          {% if page.content %}
+            <div id="main-middle">
+              <div class="inner wrapper">
+                <div class="row collapse">
+                  <div id="primary" class="{{primary_width}}column">
+                    {% if page.breadcrumb %}
+                      {{ page.breadcrumb }}
+                    {% endif %}
+                    {% if page.highlighted %}            
+                      <div id="highlight">
+                        {{ page.highlighted }}
+                      </div>
+                    {% endif %}
+                    <div id="content" class="clearfix">
+                      {{ page.content }}
+                    </div>                
+                  </div>                        
+                  {% if page.sidebar_secondary %}
+                    <div id="secondary" class="large-4 {{secondary_width}}column sidebar">
+                      {{ page.sidebar_secondary }}
+                    </div>
+                  {% endif %}
+                  {% if page.sidebar_tertiary %}
+                    <div id="tertiary" class="large-2 large-pull-10 column sidebar">
+                      {{ page.sidebar_tertiary }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if page.main_bottom_upper or page.main_bottom_lower or main_bottom_middle > 0 %}
+            <div id="main-bottom">
+              {% if page.main_bottom_upper %}
+                <div id="main-bottom-upper">
+                  <div class="inner wrapper">
+                    {{ page.main_bottom_upper }}
+                  </div>
+                </div>  
+              {% endif %}
+              {% if main_bottom_middle > 0 %}
+                <div id="main-bottom-middle">
+                  <div class="inner wrapper">
+                    {% if main_bottom_middle == 2 %}
+                      <div class="row medium-up-2 collapse">
+                    {% elseif main_bottom_middle == 3 %}
+                      <div class="row medium-up-2 large-up-3 collapse">
+                    {% else %}
+                      <div class="row collapse">
+                    {% endif %}
+                      {% if page.main_bottom_one %}
+                        <div class="column">
+                          {{ page.main_bottom_one }}
+                        </div>
+                      {% endif %}
+                      {% if page.main_bottom_two %}
+                        <div class="column">
+                          {{ page.main_bottom_two }}
+                        </div>
+                      {% endif %}
+                      {% if page.main_bottom_three %}
+                        <div class="column">
+                          {{ page.main_bottom_three }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              {% if page.main_bottom_lower %}
+                <div id="main-bottom-lower">
+                  <div class="inner">
+                    {{ page.main_bottom_lower }}
+                  </div>
+                </div>
+              {% endif %}   
+            </div> 
+          {% endif %}    
+        </div>
+        <footer id="footer">
+          {% if page.subscription %}    
+            <div id="subscription"{% if footer_middle > 0 %} class="with-footer"{% endif %}>
+              <div class="inner wrapper">
+                <div class="row collapse">
+                  <div class="large-8 column">
+                    {{ page.subscription }}
+                  </div>
+                  <div class="large-4 column">
+                    <div class="social-media">
+                      {{ page.social_media }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if footer_middle > 0 %}
+            <div id="footer-middle">
+              <div class="inner wrapper">
+                {% if footer_middle == 2 %}
+                  <div class="row medium-up-2 collapse">
+                {% elseif footer_middle == 3 %}
+                  <div class="row medium-up-2 large-up-3 collapse">
+                {% elseif footer_middle == 4 %}
+                  <div class="row medium-up-2 large-up-4 collapse">
+                {% else %}
+                  <div class="row collapse">
+                {% endif %}
+                  {% if page.footer_one %}
+                    <div class="column">
+                      {{ page.footer_one }}
+                    </div>
+                  {% endif %}
+                  {% if page.footer_two %}
+                    <div class="column">
+                      {{ page.footer_two }}
+                    </div>
+                  {% endif %}
+                  {% if page.footer_three %}
+                    <div class="column">
+                      {{ page.footer_three }}
+                    </div>
+                  {% endif %}
+                  {% if page.footer_four %}
+                    <div class="column">
+                      {{ page.footer_four }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}          
+          <div id="closure">
+            <div class="inner wrapper">
+              <div id="site-info-alter" class="text-center">
+                {% if page.site_info %}          
+                  {{ page.site_info }}
+                {% endif %}
+              </div>                
+              {{ page.closure }}
+              <div class="design-by show-for-large">
+                <a href="http://www.esors.com" title="Drupal theme">Drupal theme by esors</a>
+              </div>
+            </div>
+          </div>  
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

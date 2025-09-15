@@ -1,0 +1,497 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* BLOCK
+----------------------------------------------------------------*/
+.block > .inner {
+  position: relative;
+  padding: 1.25rem;
+}
+
+.block > .inner.without-padding {
+  padding: 0;
+}
+
+.block > .inner.with-margin,
+.block > .inner > div,
+.block > .inner > .column.row > div {
+  margin-bottom: 1.25rem;
+}
+
+.block > .inner > div:last-child,
+.block > .inner > .column.row > div:last-child {
+  margin-bottom: 0;
+}
+
+.block .title h3,
+.block .subtitle {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.block .subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin: 0 !important;
+}
+
+.block .content p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .block > .inner {
+    padding: 1.875rem;
+  }
+
+  .block > .inner.with-margin,
+  .block > .inner > div,
+  .block > .inner > .column.row > div {
+    margin-bottom: 1.875rem;
+  }
+}
+
+/* BLOCK CUSTOM
+----------------------------------------------------------------*/
+/* General
+---------------------------------*/
+.block-custom > .inner {
+  transition: all .5s ease-in-out;
+}
+
+.block-custom > .inner:hover {
+  background-position: 40% 40%;
+}
+
+.block-custom > .inner.with-filter:hover::before {
+  opacity: 0.3;
+}
+
+/* Title
+---------------------------------*/
+.block-custom .title h3.small {
+  font-size: 1rem;
+}
+
+.block-custom .title h3.large {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.block-custom .title h3.xlarge, .block-custom .title h3.xxlarge  {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.block-custom .title h3.with-border:after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+  margin-top: 0.5rem;
+}
+
+.block-custom .title h3.text-center.with-border:after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-custom .title h3.text-right.with-border:after {
+  margin-left:auto; 
+  margin-right:0;
+}
+
+.block-custom .title h3.xlarge.with-border:after,
+.block-custom .title h3.xxlarge.with-border:after  {
+  width: 5rem;
+  border-bottom-width: 2px;
+}
+
+@media screen and (min-width: 40em) {
+  .block-custom .title h3 {
+    font-size: 1.25rem;
+  }
+
+  .block-custom .title h3.large {
+    font-size: 1.9375rem;
+  }
+
+  .block-custom .title h3.xlarge {
+    font-size: 2.5rem;
+  }
+
+  .block-custom .title h3.xxlarge {
+    font-size: 3rem;
+  }
+}
+
+/* Media
+---------------------------------*/
+.block .media-object-section > div {
+  margin-bottom: 1.25rem;
+}
+
+.block  .media-object-section > div:last-child {
+  margin-bottom: 0;
+}
+
+.media-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-image.float-left {
+  margin-right: 1.25rem;
+}
+
+.media-image.float-right {
+  margin-left: 1.25rem;
+}
+
+.media-image.without-padding {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
+.block .media-object-section .media-image.without-padding {
+  margin: 0;
+}
+
+.media-image img {
+  width: 100%;
+  transition: all .5s linear;
+}
+
+.media-image.auto-width {
+  text-align: center;
+}
+
+.media-image.auto-width img {
+  width: auto;
+}
+
+.media-image .filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  transition: opacity .5s ease-out;
+}
+
+.media-image .filter:hover {
+  opacity: 0.3;
+}
+
+.media-icon {
+  text-align: center;
+}
+
+.media-icon .fa {
+  transition: color .5s ease-out;
+}
+
+.media-icon.small .fa {
+  width: 1.75rem;
+  height: 1.75rem;  
+  line-height: 1.75rem;
+  font-size: 1.25rem;
+}
+
+.media-icon.medium .fa {
+  width: 3.75rem;
+  height: 3.75rem;  
+  line-height: 3.75rem;
+  font-size: 2rem;
+}
+
+.media-icon.large .fa {
+  width: 4.75rem;
+  height: 4.75rem;  
+  line-height: 4.75rem;
+  font-size: 2.5rem;
+}
+
+.media-icon.xlarge .fa {
+  width: 5.75rem;
+  height: 5.75rem;  
+  line-height: 5.75rem;
+  font-size: 3rem;  
+}
+
+.media-icon.small.with-border .fa {
+  width: 3rem;
+  height: 3rem;  
+  line-height: 3rem;
+  font-size: 1rem;
+}
+
+.media-icon.medium.with-border .fa {
+  width: 5rem;
+  height: 5rem;  
+  line-height: 5rem;
+  font-size: 1.875rem;
+}
+
+.media-icon.large.with-border .fa {
+  width: 6rem;
+  height: 6rem;  
+  line-height: 6rem;
+  font-size: 2rem;
+}
+
+.media-icon.xlarge.with-border .fa {
+  width: 7rem;
+  height: 7rem;  
+  line-height: 7rem;
+  font-size: 2.5rem;  
+}
+
+.media-icon.rounded .fa {
+  border-radius: 50%;
+}
+
+.media-icon.with-border .fa {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.media-icon.small.with-border .fa,
+.media-icon.medium.with-border .fa {
+  border-width: 1px;
+}
+
+@media screen and (min-width: 40em) {
+  .block .media-object-section > div {
+    margin-bottom: 1.875rem;
+  }
+
+  .block .media-object-section:first-child {
+    padding-right: 1.875rem;
+  }
+
+  .block .media-object-section .media-image img {
+    width: auto;
+  }
+
+  .media-image.float-left {
+    margin-right: 1.875rem;
+  }
+
+  .media-image.float-right {
+    margin-left: 1.875rem;
+  }
+
+  .media-image.without-padding {
+    margin-left: -1.875rem;
+    margin-right: -1.875rem;
+  }
+}
+
+/* Content
+---------------------------------*/
+.content-button a {
+  margin: 0.625rem 0.625rem 0 0.625rem;
+}
+
+.content-button.text-left a:first-child {
+  margin-left: 0;
+}
+
+.content-button.text-right a:last-child {
+  margin-right: 0;
+}
+
+/* Reveal
+---------------------------------*/
+.sr .block-reveal {
+  visibility: hidden;
+}
+
+/* BLOCK ATTACHMENT
+----------------------------------------------------------------*/
+.block-attachment .block > .inner {
+  padding: 0;
+}
+
+.block-attachment .vertical.menu {
+  margin-top: -1.25rem;
+}
+
+.block-attachment .vertical.menu a {
+  padding-left: 0;
+}
+
+/* BLOCK MERGING
+----------------------------------------------------------------*/
+/* By Horizontal
+---------------------------------*/
+.merging-horizontal > .with-padding.without-collapse  {
+  padding: 0;
+}
+
+.merging-horizontal > .with-padding.without-collapse > .title, 
+.merging-horizontal > .without-padding > .title {
+  padding-top: 1.25rem;
+}
+
+.merging-horizontal > .without-collapse > .title {
+  margin-bottom: 0;
+}
+
+.merging-horizontal .uncollapse {
+  padding: 1.25rem 0.625rem;
+}
+
+.merging-horizontal .uncollapse > .column {
+  margin-bottom: 1.25rem;
+}
+
+.merging-horizontal .uncollapse > .column:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .merging-horizontal > .with-padding.without-collapse  {
+    padding: 1.875rem;
+  }
+
+  .merging-horizontal > .with-padding.without-collapse > .title {
+    padding-top: 0;
+  }
+
+  .merging-horizontal > .without-padding > .title {
+    padding-top: 1.875rem;
+  }
+
+  .merging-horizontal .uncollapse {
+    padding: 1.875rem 0.9375rem;
+  }
+
+  .merging-horizontal .uncollapse > .column {
+    margin-bottom: 1.875rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .merging-horizontal .uncollapse > .column {
+    margin-bottom: 0;
+  }
+}
+
+/* By Tab
+---------------------------------*/
+.block.merging-tab .row .row {
+  max-width: 75rem;
+  padding: 0 1.25rem 7.5rem 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block .tabs-nav  { 
+  position: absolute;
+  left: 0;
+  bottom: 1.875rem;
+  width: 100%;
+}
+
+.block .tabs-nav ul.tabs { 
+  display: inline-block;
+  text-transform: uppercase;
+  border: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+}
+
+.block ul.tabs li a {
+  color: inherit;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0.625rem;
+  background-color: transparent !important;
+}
+
+.block ul.tabs li.is-active a,
+.block ul.tabs li a:hover {
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+}
+
+.block ul.tabs li:last-child a {
+  margin: 0;
+}
+
+.block .tabs-content {
+  border: none;
+  background-color: transparent;
+}
+
+.block .tabs-content .block-custom > .inner:hover {
+  background-position: 0 0;
+}
+
+.block .tabs-panel {
+  padding: 0;
+}
+
+.block .tabs-panel.is-active {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+  opacity: 1;
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@media screen and (min-width: 40em) {
+  .block.merging-tab .row .row {
+    max-width: 75rem;
+    padding: 0 1.875rem 5.625rem 1.875rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .block ul.tabs li a {
+    font-weight: 900;
+    letter-spacing: 0.1875rem;
+    margin-right: 2.5rem;
+  }
+}
+
+/* By Slider
+---------------------------------*/
+.slide .block-custom > .inner {
+  padding: 1.875rem 0.625rem;
+}
+
+@media screen and (min-width: 40em) {
+  .slide .block-custom > .inner {
+    padding: 3.75rem 1.25rem;
+  }
+}

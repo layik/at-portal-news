@@ -1,0 +1,29 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#}
+{% set image %}{{ fields['field_image'].content|raw }}{% endset %}
+<div>
+  <div class="slide"> 
+    <div class="inner">
+      <div class="image-default" style="{{ background_image(image) }}"></div>
+    	<div class="content">
+        <h4>{{ fields['title'].content }}</h4>
+        {{ fields['body'].content }}
+        <div class="read-more">{{ fields['view_node'].content }}</div>
+      </div>
+    </div>    
+  </div>
+</div>

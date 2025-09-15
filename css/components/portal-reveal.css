@@ -1,0 +1,83 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMON
+----------------------------------------------------------------*/
+.reveal-overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* REVEAL SEARCH
+----------------------------------------------------------------*/
+#reveal-search {
+  border: 0;
+  padding-top: 2.5rem;
+  background-color: transparent;
+}
+
+#reveal-search form {
+  position: relative;
+}
+
+#reveal-search [type=search] { 
+  font-weight: 300;
+  font-style: italic;
+  height: 50px;
+  padding: 1.25rem;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+}
+
+#reveal-search [type=search]:focus {
+  box-shadow: none;
+}
+
+#reveal-search input[type="submit"] {
+  position: absolute;
+  top: 0.625rem;
+  right: 1.25rem;
+  font-family: FontAwesome;
+  font-size: 1.25rem;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+#reveal-search .close-button {
+  top: 1.25rem;
+  right: 2.5rem;
+  font-size: 2.5rem;
+  z-index: 1;
+}
+
+@media screen and (min-width: 40em) {
+  #reveal-search [type=search] {
+    font-size: 3rem;
+    height: 100px;
+  } 
+
+  #reveal-search input[type="submit"] {
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: 3rem;
+  }
+
+  #reveal-search .close-button {
+    top: 0;
+    right: 2.5rem;
+    font-size: 4rem;
+  }
+}

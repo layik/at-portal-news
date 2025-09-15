@@ -1,0 +1,64 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* FONT SIZE
+----------------------------------------------------------------*/
+blockquote {
+  font-style: italic;
+  padding: 0 1.875rem;
+}
+
+.full p.drop-cap:first-letter {
+  float: left; 
+  font-family: 'Playfair Display', Georgia, Serif;  
+  font-size: 5rem; 
+  font-weight: 900;
+  line-height: 1; 
+  padding: 0 1.25rem 0 0;
+}
+
+p.font-xsmall {
+  font-size: 0.75rem;
+}
+
+p.font-small {
+  font-size: 0.875rem;
+}
+
+p.font-large {
+  font-size: 1.1875rem;
+}
+
+p.font-xlarge {
+  font-size: 1.25rem;
+}
+
+p.font-xxlarge {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 40em) {
+  p.font-large {
+    font-size: 1.25rem;
+  }
+
+  p.font-xlarge {
+    font-size: 2.5rem;
+  }
+
+  p.font-xxlarge {
+    font-size: 3rem;
+  }
+}

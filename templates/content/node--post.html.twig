@@ -1,0 +1,191 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+{% if content.field_image|render %}
+  {% set image_check %} with-image{% endset %}
+{% endif %}
+
+{% if teaser %}
+  {% set classes %}node post teaser{{ image_check }} clearfix{% endset %}
+  <article{{ attributes.addClass(classes) }}>
+    {% if content.field_image|render %}
+      <div class="image-default">
+        {{ content.field_image }}
+      </div>
+    {% endif %} 
+    <header>
+      {% if content.field_category|render %}
+        <div class="category">{{ content.field_category }}</div>
+      {% endif %}
+      {{ title_prefix }}
+        <h2 class="title"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+      {{ title_suffix }} 
+      <div class="meta clearfix">
+        <div class="author">
+          {{ author_picture }}                  
+          <span class="lowercase">{{ 'by'|t }}</span> {{ author_name }}
+        </div>
+        <div class="date">
+          <span class="lowercase">{{ 'posted on'|t }}</span>{{ node.createdtime|date("F j, Y") }}
+        </div>
+        <div class="comment show-for-medium">
+          {% if comment_count == 0 %}
+            <span class="lowercase">no</span>{{ 'comment'|t }}
+          {% elseif comment_count == 1 %}
+            <span class="lowercase">1</span>{{ 'comment'|t }}
+          {% else %}
+            <span class="lowercase">{{comment_count}}</span>{{ 'comments'|t }}
+          {% endif %}            
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      {{ content|without('comment', 'links', 'field_category', 'field_image') }}
+    </div>
+    <div class="read-more"><a href="{{ url }}" class="button hollow rounded">{{ 'continue reading'|t }} &#8594;</a></div>
+  </article>
+{% endif %}
+
+{% if view_mode =="list" %}
+  {% set classes %}node post teaser list{{ image_check }} clearfix{% endset %}
+  <article{{ attributes.addClass(classes) }}>
+    <div class="clearfix">
+      {% if content.field_image|render %}
+        <div class="image-default">
+          {{ content.field_image }}
+        </div>
+      {% endif %}     
+      <header>
+        {% if content.field_category|render %}
+          <div class="category">{{ content.field_category }}</div>
+        {% endif %}
+        {{ title_prefix }}
+          <h2 class="title"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+        {{ title_suffix }}     
+      </header>
+      <div class="content">
+        {{ content|without('comment', 'links', 'field_category', 'field_image') }}
+      </div>
+    </div>
+    <div class="meta clearfix">
+      <div class="author">
+        {{ author_picture }}                  
+        <span class="lowercase">{{ 'by'|t }}</span> {{ author_name }}
+      </div>
+      <div class="date">
+        <span class="lowercase">{{ 'posted on'|t }}</span>{{ node.createdtime|date("F j, Y") }}
+      </div>
+      <div class="comment show-for-medium">
+        {% if comment_count == 0 %}
+          <span class="lowercase">no</span>{{ 'comment'|t }}
+        {% elseif comment_count == 1 %}
+          <span class="lowercase">1</span>{{ 'comment'|t }}
+        {% else %}
+          <span class="lowercase">{{comment_count}}</span>{{ 'comments'|t }}
+        {% endif %}            
+      </div>
+    </div>
+  </article>
+{% endif %}
+
+{% if page %}
+  {% set classes %}node post full{{ image_check }} clearfix{% endset %}  
+  <article{{ attributes.addClass(classes) }}>
+    {% if content.field_image|render %}
+      <div class="image-default">
+        {{ content.field_image }}
+      </div>
+    {% endif %}
+    <header>
+      {% if content.field_category|render %}
+        <div class="category">{{ content.field_category }}</div>
+       {% endif %} 
+      <h1 class="title">{{ label }}</h1>
+      {% if content.field_subtitle|render %}
+        <div class="summary show-for-medium">{{ content.field_subtitle }}</div>
+      {% endif %}
+      {% if display_submitted %}
+        <div class="meta clearfix">
+          <div class="author">
+          {{ author_picture }}                  
+            <span class="lowercase">{{ 'by'|t }}</span> {{ author_name }}
+          </div>
+          <div class="date">
+            <span class="lowercase">{{ 'posted on'|t }}</span>{{ node.createdtime|date("F j, Y") }}
+          </div>
+          <div class="comment show-for-medium">
+            {% if comment_count == 0 %}
+              <span class="lowercase">no</span>{{ 'comment'|t }}
+            {% elseif comment_count == 1 %}
+              <span class="lowercase">1</span>{{ 'comment'|t }}
+            {% else %}
+              <span class="lowercase">{{comment_count}}</span>{{ 'comments'|t }}
+            {% endif %}            
+          </div>
+        </div>
+      {% endif %}
+    </header>
+    <div class="content">
+      <div class="row">
+        <div class="large-9 large-push-3 column">
+          <div class="content-main">
+            {{ content|without('comment', 'links', 'field_subtitle', 'field_tags', 'field_category', 'field_image', 'addtoany') }}             
+          </div>
+          {% if content.links %}
+            <section class="links">
+              <div class="title"><h3>{{ 'Links'|t }}</h3></div>                        
+              {{ content.links }}       
+            </section>
+          {% endif %}
+          {% if related|render %}
+            <section class="related">   
+              <div class="title"><h3>{{ 'Related'|t }}</h3></div> 
+              {{ related }}
+            </section>
+          {% endif %}
+          {% if prev_next %}
+            <section class="prev-next show-for-large clearfix">{{ prev_next }}</section>
+          {% endif %} 
+        </div>
+        <div class="large-3 large-pull-9 column">
+          <aside>
+            {% if content.addtoany %}
+              <section class="share text-center">
+                <div class="title"><h3>{{ 'Share'|t }}</h3></div>
+                {{ content.addtoany }}
+              </section>
+            {% endif %}
+            {% if content.field_tags|render %}
+              <section class="tags">             
+                <div class="title"><h3>{{ 'Tags'|t }}</h3></div>
+                {{ content.field_tags }}                               
+              </section>
+            {% endif %} 
+            {% if prev_next %}
+              <section class="prev-next hide-for-large clearfix">{{ prev_next }}</section>
+            {% endif %}             
+          </aside>
+        </div>
+      </div>
+    </div>
+    <div class="content-bottom">
+      <section id="author">   
+        {{ author }}
+      </section>
+      {{ content.comment }}
+    </div>
+  </article>
+{% endif %}

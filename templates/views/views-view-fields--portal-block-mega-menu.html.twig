@@ -1,0 +1,22 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+<div class="image-default">{{ fields['field_image'].content }}</div>
+<div class="meta">  
+   <span class="float-right">{{ fields['field_category'].content }}</span>
+   {{ fields['created'].content }}
+</div>
+<h4>{{ fields['title'].content }}</h4>

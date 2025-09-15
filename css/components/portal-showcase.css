@@ -1,0 +1,300 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMON
+----------------------------------------------------------------*/
+.slick-slider {
+  margin-bottom: 0;  
+}
+
+.slick-slide {
+  outline: none;
+}
+
+.slick-slide .slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.showcase {
+  visibility: hidden;
+}
+
+.showcase.slick-initialized {
+  visibility: visible;
+}
+
+.showcase .with-filter::before {
+  opacity: 0.5;
+}
+
+/* Pager
+---------------------------------*/
+ul.slick-dots {
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.slick-dots li {
+  margin: 0.3125rem;
+}
+
+.slick-dots li button:before {
+  font-size: 2rem;
+}
+
+.slick-prev,
+.slick-next {
+  bottom: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: -1.25rem;  
+  z-index: 1;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all .5s ease-in-out;
+}
+
+.slick-prev {
+  left: 0; 
+} 
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev:before, 
+.slick-next:before {
+  display: inline-block;
+  font-family: FontAwesome; 
+  font-size: 1rem; 
+  line-height: 40px; 
+}
+
+.slick-prev:before { content: "\f0d9"; }
+.slick-next:before { content: "\f0da"; }
+
+.slick-prev:hover,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-next:focus {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (min-width: 40em) {
+  .slick-dots {
+    left: 4.25rem;
+  }
+}
+
+/* SHOWCASE BASIC
+----------------------------------------------------------------*/
+.showcase-basic .cover {
+  position: relative;
+  height: 400px;
+  margin-bottom: 1.25rem;
+  border: 10px solid rgba(255 ,255 ,255 , 0.05);
+  overflow: hidden;
+}
+
+.showcase-basic .cover img  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  max-height: none;
+  max-width: none;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.showcase-basic .slide-content {
+  font-size: 0.8125rem;
+  padding: 0 1.25rem;
+}
+
+.showcase-basic .slide-content p {
+  margin-bottom: 0;
+}
+
+.showcase-basic a {
+  outline: none;
+}
+
+@media screen and (min-width: 64em) {
+  .showcase-basic {
+    padding-right: 0.625rem;
+  }
+}
+
+/* Pager
+---------------------------------*/
+.showcase-pager {
+  margin-top: 1.875rem;
+  height: 50px;
+}
+
+.showcase-pager .slide {
+  display: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.showcase-pager .slide .meta {
+  padding-bottom: 0.625rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+}
+
+.showcase-pager .slide h4 { 
+  color: inherit;
+  font-size: 1.125rem;
+  padding: 1.25rem 0;
+  margin: 0 !important;
+  border: 0 !important;
+}
+
+.showcase-pager .slick-prev {
+  left: 0; 
+  top: auto;
+  bottom: 0;
+  width: 50%;
+  height: 40px;
+  border-radius: 3px 0 0 3px;
+} 
+
+.showcase-pager .slick-next {
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: 0;
+  width: 50%;
+  height: 40px;
+  margin-left: 1px;
+  border-radius: 0 3px 3px 0;
+}
+
+.showcase-pager .slick-prev:before { content: "\f060"; font-size: 0.75rem; }
+.showcase-pager .slick-next:before { content: "\f061"; font-size: 0.75rem; }
+
+@media screen and (min-width: 64em) {
+  .showcase-pager {
+    margin-left: 1.875rem;
+    height: 480px;
+  }
+
+  .showcase-pager .slide {
+    display: block;
+  }
+
+  .showcase-pager .slick-prev,
+  .showcase-pager .slick-next {
+    bottom: 40px;
+  }
+
+  .showcase-pager .slick-prev:before { content: "\f062";}
+  .showcase-pager .slick-next:before { content: "\f063";}
+}
+
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+  .showcase-pager {
+    margin-top: 0;
+    height: 520px;
+  }
+
+  .showcase-pager .slide {
+    height: 145px;
+  }
+}
+
+/* CATEGORY
+----------------------------------------------------------------*/   
+.block.views-block-post-category > .inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.showcase-category .slick-slide {
+  margin: 0 0.9375rem;
+}
+    
+.showcase-category .slide {
+  width: 450px;
+  height: 300px;
+}
+
+.showcase-category .slide .inner {
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.showcase-category .with-filter::before {
+  opacity: 0.5;
+}
+
+.showcase-category .with-filter:hover::before {
+  opacity: 0;
+}
+
+.showcase-category .slide .content {
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all .3s ease-out;
+}
+
+.showcase-category .slide .content:hover {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.showcase-category .slide .content > a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent; 
+}
+
+.showcase-category .slide .term a {
+  font-family: 'Merriweather', Georgia, Serif;   
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.showcase-category .slide .description {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  font-size: 0.9375rem;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .block.views-block-post-category > .inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,135 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Portal theme.
+ */
+
+use Drupal\Core\Template\Attribute;
+
+function portal_news_preprocess_html(&$variables) {
+
+  if (!empty($variables['page']['sidebar_secondary']) && !empty($variables['page']['sidebar_tertiary'])) {
+    $variables['attributes']['class'][] = 'two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_secondary'])) {
+    $variables['attributes']['class'][] = 'sidebar-secondary';
+  }
+  elseif (!empty($variables['page']['sidebar_tertiary'])) {
+    $variables['attributes']['class'][] = 'sidebar-tertiary';
+  }
+  else {
+    $variables['attributes']['class'][] = 'no-sidebars';
+  }
+}
+
+function portal_news_preprocess_page(&$variables) {
+
+  if (!empty($variables['page']['sidebar_secondary']) && !empty($variables['page']['sidebar_tertiary'])) {
+    $variables['primary_width'] = 'large-6 large-push-2 ';
+    $variables['secondary_width'] = 'large-push-2 ';
+  }
+  elseif (!empty($variables['page']['sidebar_secondary'])) {
+    $variables['primary_width'] = 'large-8 ';
+  }
+  elseif (!empty($variables['page']['sidebar_tertiary'])) {
+    $variables['primary_width'] = 'large-10 ';
+  }
+  else {
+    $variables['primary_width'] = '';
+  }
+  $variables['main_top_middle'] = count(array_filter(array($variables['page']['main_top_one'], $variables['page']['main_top_two'], $variables['page']['main_top_three'])));
+  $variables['main_bottom_middle'] = count(array_filter(array($variables['page']['main_bottom_one'], $variables['page']['main_bottom_two'], $variables['page']['main_bottom_three'])));
+  $variables['footer_middle'] = count(array_filter(array($variables['page']['footer_one'], $variables['page']['footer_two'], $variables['page']['footer_three'], $variables['page']['footer_four'])));
+}
+
+function portal_news_preprocess_block(&$variables) {
+
+  $block = \Drupal::entityTypeManager()->getStorage('block')->load($variables['elements']['#id']);
+  $variables['block_region'] = $block->get('region'); 
+
+  if (isset($variables['elements']['content']['#block_content'])) {  
+  
+    $variables['block_content'] = $variables['elements']['content']['#block_content']; 
+
+    if ( $variables['block_content']->bundle()=='showcase' ){
+    
+      $data_slick = "";
+
+      $effect_fade = $variables['block_content']->field_showcase_fade->value;
+      $effect_auto = $variables['block_content']->field_showcase_autoplay->value;
+      $effect_speed = $variables['block_content']->field_showcase_speed->value;
+
+      if ($effect_fade==true) {
+        $data_slick = $data_slick."\"fade\": true, ";
+      }
+
+      if ($effect_auto==true) {
+        $data_slick = $data_slick."\"autoplay\": true, ";
+      }
+
+      if (!empty($effect_speed)) {
+        $data_slick = $data_slick."\"autoplaySpeed\": ".$effect_speed.", ";
+      }    
+
+      $variables['data_slick'] = " data-slick='{".substr($data_slick, 0, -2)."}'";
+    }    
+  }
+}
+
+function portal_news_preprocess_node(&$variables) {
+
+  $view_mode = $variables['view_mode']; 
+  $allowed_view_modes = ['full']; 
+
+  if(in_array($view_mode, $allowed_view_modes)) {
+    $allowed_regions = ['breadcrumb', 'highlighted', 'prev_next', 'author', 'related', 'sidebar_secondary'];
+    portal_news_add_regions_to_node($allowed_regions, $variables);
+  }
+
+  if ($variables['node']->getType() == 'post' or $variables['node']->getType() == 'article') {
+    $variables['comment_count'] = $variables['node']->get('comment')->comment_count;
+  }
+}
+ 
+function portal_news_add_regions_to_node($allowed_regions, &$variables) {
+
+  $theme = \Drupal::theme()->getActiveTheme()->getName(); 
+  $available_regions = system_region_list($theme, 'REGIONS_ALL'); 
+  $regions = array_intersect(array_keys($available_regions), $allowed_regions); 
+
+  foreach ($regions as $key => $region) { 
+
+    $blocks = \Drupal::entityTypeManager()->getStorage('block')->loadByProperties(['theme' => $theme, 'region' => $region]); 
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+    $build = array();
+    foreach ($blocks as $key => $block) {
+      if ($block->access('view')) {
+        $build[$key] = \Drupal::entityTypeManager()->getViewBuilder('block')->view($block, 'block');
+      }
+    }    
+    $variables[$region] = $build;
+  }
+}
+
+function portal_news_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    $form['keys']['#title'] = '<span class="fa fa-search"></span>';
+    $form['keys']['#title_display'] = 'before';
+    $form['keys']['#attributes']['placeholder'] = t('Search ...');
+    $form['actions']['submit']['#value'] = t('');
+  }
+}
+
+function portal_news_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+  }
+}
+
+function portal_news_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}

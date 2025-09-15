@@ -1,0 +1,33 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+{% if site_logo %}
+  <div class="site-logo">
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+    </a>
+  </div>
+{% endif %}
+{% if site_name %}
+  <div class="site-name">
+    <h1><a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a></h1>
+  </div>
+{% endif %}
+{% if site_slogan %}
+  <div class="site-slogan">
+    {{ site_slogan }}
+  </div>
+{% endif %}

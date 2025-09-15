@@ -1,0 +1,354 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* MENU COMMON
+----------------------------------------------------------------*/
+[data-dropdown-menu] ul {
+  display: none;
+}
+
+nav h2 {
+  font-size: 1.25rem;
+}
+
+#menu-primary nav > .inner,
+#menu-secondary nav > .inner,
+#menu-mobile nav > .inner,
+#closure nav > .inner,
+.mega-menu nav > .inner {
+  padding: 0;
+}
+
+/* MENU PRIMARY
+----------------------------------------------------------------*/
+#menu-primary {
+  height: 75px;
+}
+
+#menu-primary a {
+  text-transform: uppercase;
+  font-family: 'Merriweather', Georgia, Serif;  
+  font-size: 0.9375rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 1.875rem 1.5rem;
+}
+
+#menu-primary ul.dropdown > li > a {
+  border-top: 1px solid transparent;
+}
+
+#menu-primary ul.dropdown > li > a:hover,
+#menu-primary ul.dropdown > li.is-active > a {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+#menu-primary .submenu {
+  text-align: left;
+  min-width: 250px;
+  border: none;
+}
+
+#menu-primary .submenu.first-sub {
+  top: 75px;
+}
+
+#menu-primary .submenu a {
+  font-family: 'Open Sans', Arial, Helvetica, Sans-Serif;  
+  font-size: 0.8125rem;
+  font-weight: 400;
+  text-transform: none;
+  padding: 1.4375rem 1.5rem;  
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: rgba(255,255,255, 0.1);
+}
+
+.dropdown.menu>li.is-dropdown-submenu-parent>a:after,
+.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a:after {
+  border: 0;
+}
+
+.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a:before {
+  position: absolute;  
+  font-family: FontAwesome; 
+  content: '\f101';
+  right: 15px;
+  top: 23px;
+}
+
+.is-dropdown-submenu .is-dropdown-submenu {
+  margin-top: -1px;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+/* MENU MEGA
+----------------------------------------------------------------*/
+#menu-mega {
+  height: 75px;
+}
+
+#menu-mega li.is-dropdown-submenu-parent {
+  position: static;
+}
+
+#menu-mega ul.dropdown > li > a {
+  text-transform: uppercase;
+  font-family: 'Merriweather', Georgia, Serif;  
+  font-size: 0.9375rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 1.875rem 1.5rem;
+  border-top: 1px solid transparent;
+}
+
+#menu-mega ul.dropdown > li > a:hover,
+#menu-mega ul.dropdown > li.is-active > a {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.dropdown.menu>li.opens-right>.mega-menu.is-dropdown-submenu {
+  right: auto;
+  left: 0;
+  top: 76px;
+  min-width: 100%;
+}
+
+.mega-menu {
+  text-align: left;
+  margin: 0;
+  list-style: none;
+  border: none;
+  -webkit-box-shadow: 0px 5px 5px -5px #000;
+  -moz-box-shadow: 0px 5px 5px -5px #000;
+  box-shadow: 0px 5px 5px -5px #000;
+  z-index: 9;
+}
+
+.mega-menu .menu {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.mega-menu nav h2 {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.mega-menu .menu li {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: rgba(225, 225, 225, 0.1);
+}
+
+.mega-menu .menu li a {
+  padding: 1.125rem 0.625rem;
+}
+
+.mega-menu .block-merging .block-views > .inner {
+  padding: 0;
+}
+
+.block .block-mega-menu .image-default {
+  margin-bottom: 1.25rem;
+}
+
+.block .block-mega-menu .image-default img {
+  width: 100%;
+}
+
+.block .block-mega-menu h4 {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 64em) and (max-width: 89.9375em) {
+  .mega-menu .column:first-child {
+    margin-bottom: 1.875rem;
+  }
+}
+
+/* MENU MOBILE
+----------------------------------------------------------------*/
+#mobile-button button {
+  font-size: 0.6875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  padding: 0.5rem 0;
+  margin-right: 1.875rem;
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  transition: all .3s ease-out;
+}
+
+#menu-mobile .site-info, 
+#menu-mobile .menu-sub {
+  height: 75px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#menu-mobile .site-info {
+  padding: 1.25rem
+}
+
+#menu-mobile .site-info h1 {
+  font-size: 1.9375rem;
+}
+
+#menu-mobile .site-info h1 a {
+  outline: none;
+}
+
+#menu-mobile .social-media {
+  padding: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#menu-mobile .button {
+  font-size: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  margin: 1.25rem 0;
+}
+
+#menu-mobile .button.close {
+  font-size: 1.25rem;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  padding: 0;
+}
+
+#menu-mobile h2,
+#menu-mobile .title {
+  display: none;
+}
+
+#menu-mobile > nav > .inner > ul {
+  margin: 0 1.25rem;
+}
+
+#menu-mobile > nav ul li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#menu-mobile > nav > .inner > ul > li:last-child,
+#menu-mobile > nav ul ul li:last-child {
+  border-bottom: none;
+}
+
+#menu-mobile > nav ul li a {
+  padding: 1.4375rem 1rem;
+  font-family: 'Merriweather', Georgia, Serif;  
+  font-size: 0.9375rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+#menu-mobile .is-accordion-submenu-parent>a {
+  padding-right: 2.5rem;
+}
+
+#menu-mobile .is-accordion-submenu-parent[aria-expanded=true]>a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#menu-mobile .is-accordion-submenu-parent>a:after {
+  content: '+';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 40px;
+  height: 60px;
+  margin-top: 0;
+  border: none;
+  line-height: 60px;
+  text-align: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#menu-mobile .is-accordion-submenu-parent[aria-expanded=true]>a:after {
+  content: '-';
+}
+
+#menu-mobile .submenu {
+  margin-left: 0;
+}
+
+#menu-mobile .submenu a {
+  font-family: 'Open Sans', Arial, Helvetica, Sans-Serif;  
+  font-size: 0.8125rem;
+  font-weight: 400;
+  text-transform: none;
+  padding-left: 1.875rem;
+}
+
+@media screen and (min-width: 40em) {
+  #menu-mobile-button {
+    left: 0px;
+  }
+}
+
+/* MENU SECONDARY
+----------------------------------------------------------------*/
+#menu-secondary {
+  height: 50px;
+}
+
+#menu-secondary nav h2 {
+  float: left;
+  font-size: 1.125rem;
+  font-weight: 900;
+  padding: 0.75rem 1.25rem 0 0;
+}
+
+#menu-secondary ul.menu {
+  display: inline-block;
+}
+
+#menu-secondary ul.menu li a {
+  font-size: 0.8125rem;
+  font-weight: 900;
+  padding: 1.125rem 1.25rem;
+}
+
+/* FOOTER
+----------------------------------------------------------------*/
+#footer #footer-menu {
+  display: none;
+  margin-top: 1.25rem;
+}
+
+#footer #footer-menu li a {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.7rem 1rem;
+}
+
+@media screen and (min-width: 40em) {
+  #footer #footer-menu {
+    display: block;
+  }
+}

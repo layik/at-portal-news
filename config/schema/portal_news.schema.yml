@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Portal News theme.
+
+portal_news.settings:
+  type: theme_settings
+  label: 'Portal settings'

@@ -1,0 +1,199 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMENT POST
+----------------------------------------------------------------*/
+#comment-post {
+  margin-bottom: 1.875rem;
+}
+
+#comment-post,
+#comment-box {
+  position: relative;
+  padding: 1.25rem;
+  margin-bottom: 1.875rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.05);  
+}
+
+#comment-post header h3,
+#comment-box header h3 {  
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1.875rem;
+}
+
+.comment h4.title {
+  display: none;
+  font-size: 1.125rem;
+  font-weight: 900;
+}
+
+.comment:last-child {
+  margin-bottom: 0;
+}
+
+.comment .content {
+  position: relative;
+  font-size: 0.9375rem;
+  padding: 1.875rem 0;
+}
+
+.comment .content p:last-child {
+  margin: 0;
+}
+
+.comment:first-child {
+  border-radius: 5px 5px 5px 0;
+}
+
+.comment .media-object-section:first-child {
+  padding-right: 1.25rem;
+}
+
+.comment .media-object-section:last-child {
+  width: 100%;
+  padding-top: 0.3125rem;
+}
+
+.comment .meta {
+  position: relative;
+  padding: 0.9375rem 0;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.comment .meta:before, .comment .meta:after {
+  content: "";
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: 100%;
+  left: 6.25rem;
+  margin-left: -10px;
+}
+
+.comment .meta:before {
+  border-top: 10px solid rgba(0, 0, 0, 0.05);
+}
+
+.comment .meta:after {
+  border-top-width: 10px;
+  border-top-style: solid;
+  margin-top: -2px;
+  z-index: 1;
+}
+
+.comment .meta .user-picture {
+  float: left;
+  padding-right: 1.25rem;
+}
+
+.comment .meta .author {
+  float: none;
+  width: auto;
+  display: inline-block;
+  padding-right: 1.25rem;
+  border: 0;
+}
+
+.comment .meta .author span {
+  display: block;
+}
+
+.comment .links {
+  text-align: center;
+  margin-left: 0;
+}
+
+.comment .links {
+  list-style: none;
+}
+
+.comment .links li {
+  display: inline-block;
+}
+
+.comment .links li a {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 0.3125rem;
+}
+
+@media screen and (min-width: 40em) {
+  #comment-post,
+  #comment-box {
+    padding: 1.875rem;
+  }
+
+  .comment .links {
+    float: right;
+    margin: 0;
+  }
+
+  .comment .meta .author {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .comment .content {
+    padding: 1.875rem;
+  }
+
+  .indented .comment {
+    margin-left: 1.875rem;
+  }
+}
+
+/* COMMENT BOX
+----------------------------------------------------------------*/
+.comment-form .filter-wrapper {
+  display: none;
+  margin-top: -1rem;
+  margin-bottom: 1.25rem;
+}
+
+#comment-box .filter-guidelines {
+  font-size: 0.875rem;
+}
+
+#comment-box label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+}
+
+#comment-box textarea,
+#comment-box input[type="text"] {
+  color: inherit;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  border-width: 1;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+#comment-box textarea:focus,
+#comment-box input[type="text"]:focus {
+  border-color: rgba(0, 0, 0, 0.1);
+}

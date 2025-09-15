@@ -1,0 +1,118 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#}
+{% if not page %}
+  {% set classes %}node article teaser clearfix{% endset %}
+  <article{{ attributes.addClass(classes) }}>
+    <header>
+      {{ title_prefix }}
+        <h2 class="title text-center"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+      {{ title_suffix }} 
+      <div class="meta submit clearfix">
+        <div class="date text-right">
+          <span class="lowercase">{{ 'posted on'|t }}</span>{{ node.createdtime|date("F j, Y") }}
+        </div>
+        <div class="author">
+          {{ author_picture }}                  
+          <span class="lowercase">{{ 'by'|t }}</span> {{ author_name }}
+        </div>
+      </div>      
+    </header>
+    {% if content.field_image|render %}
+      <div class="image-default">
+        {{ content.field_image }}
+      </div>
+    {% endif %} 
+    <div class="content">
+      {{ content|without('comment', 'links', 'field_tags', 'field_image', 'addtoany') }}
+    </div>    
+    <div class="meta link clearfix">
+      <div class="comment">
+        {% if comment_count == 0 %}
+          <span class="lowercase">no</span>{{ 'comment'|t }}
+        {% elseif comment_count == 1 %}
+          <span class="lowercase">1</span>{{ 'comment'|t }}
+        {% else %}
+          <span class="lowercase">{{comment_count}}</span>{{ 'comments'|t }}
+        {% endif %}            
+      </div>
+      {% if content.addtoany %}
+        <div class="share text-center show-for-medium">
+          {{ content.addtoany }}
+        </div>
+      {% endif %}
+      <div class="read-more"><a href="{{ url }}"><span class="lowercase">&#8594;</span>{{ 'READ MORE'|t }}</a></div> 
+    </div>
+  </article>
+{% else %}
+  {% set classes %}node article full clearfix{% endset %}  
+  <article{{ attributes.addClass(classes) }}>
+    <header>
+      <h1 class="title text-center">{{ label }}</h1>
+      <div class="meta submit clearfix">
+        <div class="date text-right">
+          <span class="lowercase">{{ 'posted on'|t }}</span>{{ node.createdtime|date("F j, Y") }}
+        </div>
+        <div class="author">
+          {{ author_picture }}                  
+          <span class="lowercase">{{ 'by'|t }}</span> {{ author_name }}
+        </div>
+      </div>
+    </header>
+    {% if content.field_image|render %}
+      <div class="image-default">
+        {{ content.field_image }}
+      </div>
+    {% endif %}
+    <div class="content">
+      <div class="content-main">
+        {{ content|without('comment', 'links', 'field_tags', 'field_image', 'addtoany') }} 
+      </div> 
+      {% if content.addtoany %}
+        <section class="share text-center">              
+          {{ content.addtoany }}
+        </section>
+      {% endif %}
+      {% if content.links %}
+        <section class="links">
+          <div class="title"><h3>{{ 'Links'|t }}</h3></div>                        
+          {{ content.links }}       
+        </section>
+      {% endif %}
+      {% if content.field_tags|render %}
+        <section class="tags">             
+          <div class="title"><h3>{{ 'Tags'|t }}</h3></div>
+          {{ content.field_tags }}                               
+        </section>
+      {% endif %} 
+      {% if related %}
+        <section class="related">   
+          <div class="title"><h3>{{ 'Related'|t }}</h3></div> 
+          {{ related }}
+        </section>
+      {% endif %}
+      {% if prev_next %}
+        <section class="prev-next clearfix">{{ prev_next }}</section>
+      {% endif %} 
+    </div>
+    <div class="content-bottom">
+      <section id="author">   
+        {{ author }}
+      </section>
+      {{ content.comment }}
+    </div>
+  </article>
+{% endif %}

@@ -1,0 +1,241 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* GENERAL
+----------------------------------------------------------------*/
+#main-top .title h3,
+#secondary .title h3 {
+  position: relative;
+  display: inline-block;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  padding: 0.375rem 1.25rem;
+}
+
+#main-top .title h3:before,
+#secondary .title h3:before {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: '';
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;  
+  border-left-width: 20px;
+  border-left-style: solid;
+}
+
+#main-bottom .title,
+#tertiary .title {
+  position: relative;
+  margin-top: 0.625rem;
+  margin-bottom: 1.875rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#main-bottom .title h3,
+#tertiary .title h3 {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  display: inline-block;
+  padding: 0.375rem 1.25rem;
+  margin-bottom: 0;
+}
+
+#main-bottom .title h3:before,
+#tertiary .title h3:before {  
+  position: absolute;
+  left: 0;
+  top: 15px;
+  content: '';
+  width: 5px;
+  height: 10px;
+}
+
+#tertiary .title h3 {
+  top: -17px;
+}
+
+#tertiary .title h3:before {  
+  top: 12px;
+}
+
+#main-bottom-upper .title {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+#tertiary .title h3 {
+  font-size: 0.9375rem;
+}
+
+/* BLOCK SOCIAL MEDIA
+----------------------------------------------------------------*/
+.block.block-social-media-links > .inner {
+  text-align: center;
+  padding: 0;
+}
+
+.block-social-media-links ul {
+  margin: 0;
+}
+
+.block-social-media-links .horizontal li {
+  padding: .2em;
+}
+
+.block-social-media-links .fa-lg {
+  display: inline-block;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  line-height: 2.1875rem;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.block-social-media-links .fa-lg:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#footer .block-social-media-links {
+  padding: 1.875rem 1.25rem 1.25rem 1.25rem;
+}
+
+/* BLOCK SUBSCRIPTION
+----------------------------------------------------------------*/
+#subscription {
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#subscription.with-footer {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.block.block-simplenews > .inner {
+  position: relative;
+  padding: 0 1.875rem;
+}
+
+.block-simplenews .title,
+.block-simplenews label,
+.block-simplenews .description {
+  display: none;
+}
+
+.block-simplenews .form-item-message {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1875rem;
+  padding-right: 1.25rem;
+}
+
+.block-simplenews .form-item-message:before {
+  float: left;
+  width: 80px;
+  height: 80px;
+  content: '\f2b6';
+  font-family: FontAwesome; 
+  font-size: 3.125rem; 
+  line-height: 1;
+}
+
+.block-simplenews .field--type-email {
+  margin-top: 0.3125rem;
+}
+
+.block-simplenews [type=email] {
+  color: inherit;
+  font-size: 1.25rem;
+  padding: 1.5rem 0.9375rem;
+  margin-bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.block-simplenews [type=email]:focus {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.block-simplenews .form-actions {
+  position: absolute;
+  right: 1.875rem;
+  bottom: 0;
+}
+
+.user-logged-in .block-simplenews .form-actions {
+  position: static;
+  text-align: center;
+}
+
+.block-simplenews input[type=submit] {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 1.875rem;
+  margin-bottom: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: transparent;
+}
+
+.user-logged-in .block-simplenews input[type=submit] {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.block-simplenews input[type=submit]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (min-width: 40em) {
+  .user-logged-in .block-simplenews .form-item-message {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .block-simplenews .form-item-message,
+  .block-simplenews .field--type-email {
+    width: 50%;
+    float: left;
+  }
+
+  .user-logged-in .block-simplenews .form-item-message,
+  .user-logged-in .block-simplenews .field--type-email {
+    width: 100%;
+    float: none;
+  }
+
+  .block-simplenews .form-actions {
+    position: absolute;
+    right: 1.875rem;
+    top: 5px;
+  }
+
+  .block-simplenews .form-item-message:before {
+    height: 60px;
+  }
+}
+
+/* WHO'S
+----------------------------------------------------------------*/
+.block.views-blockwho-s-online-who-s-online-block .title,
+.block.views-blockwho-s-new-who-s-new-block .title {
+  margin-bottom: 0;
+}

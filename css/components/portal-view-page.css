@@ -1,0 +1,195 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+.page-taxonomy .views-element-container > div > header {
+  display: none;
+}
+
+/* PAGE CATEGORY
+----------------------------------------------------------------*/
+.view.page-post-category .column .inner {
+  position: relative;
+  margin-bottom: 1.875rem;
+}
+
+.view.page-post-category .title {
+  position: relative;
+  margin: 1.25rem 0 1.875rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.view.page-post-category .title h2 {
+  position: absolute;
+  left: 0;
+  top: -25px;
+  display: inline-block;
+  font-size: 1.9375rem;
+  text-transform: capitalize;
+  padding: 0 1.25rem;
+  margin-bottom: 0;
+}
+
+.view.page-post-category .title h2:before {  
+  position: absolute;
+  left: 0;
+  top: 20px;
+  content: '';
+  width: 5px;
+  height: 10px;
+}
+
+.view.page-post-category h3 {
+  font-size: 1.125rem;
+}
+
+.view.page-post-category li  {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.view.page-post-category li:last-child  {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.view.page-post-category .image-default {
+  margin-bottom: 1.25rem;
+}
+
+.view.page-post-category .brief {
+  display: none;
+}
+
+.view.page-post-category .fa {
+  font-size: 0.625rem;
+  padding-right: 0.3125rem;
+}
+
+.view.page-post-category .author,
+.view.page-post-category .author a {
+  font-size: 0.75rem;
+}
+
+.view.page-post-category .author i {
+  padding-right: 0.3125rem;
+}
+
+.view.page-post-category .column-large > .inner,
+.view.page-post-category .column-medium > .inner {
+  min-height: 200px;
+}
+
+.view.page-post-category .column-large .image-default,
+.view.page-post-category .column-medium .image-default {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.view.page-post-category .column-large .content,
+.view.page-post-category .column-medium .content {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 1.875rem;
+  width: 75%;
+}
+
+.view.page-post-category .column-large .content h3,
+.view.page-post-category .column-medium .content h3 {  
+  display: inline;
+  font-size: 1.1875rem;
+  line-height: 1.85;
+  padding: 0.3125rem 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 10px 0 0 rgba(0, 0, 0, 0.8), -10px 0 0 rgba(0, 0, 0, 0.8);
+}
+
+.view.page-post-category .column-large .author,
+.view.page-post-category .column-medium .author {  
+  display: inline-block;
+  padding: 0.3125rem 0;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 10px 0 0 rgba(0, 0, 0, 0.8), -10px 0 0 rgba(0, 0, 0, 0.8);
+}
+
+.view.page-post-category .column-small h3 {
+  margin-bottom: 1.25rem;
+}
+
+.view.page-post-category .column-medium .image-default img {
+  width: 100%;
+}
+
+.view.page-post-category .column-list .brief  {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.view.page-post-category .column-list .submit {
+  display: none;
+}
+
+.view.page-post-category .column-list .meta.date {
+  display: none;
+}
+
+.view.page-post-category .column-list .brief .meta.date {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .view.page-post-category .column-large .image-default,
+  .view.page-post-category .column-medium .image-default {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .view.page-post-category .column-large .image-default img,
+  .view.page-post-category .column-medium .image-default img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    max-height: none;
+    max-width: none;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
+
+  .view.page-post-category .column-small .image-default {
+    float: left;
+    margin-right: 1.875rem;
+  }
+
+  .view.page-post-category .column-small .image-default img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .view.page-post-category .column-large .content h3 {  
+    font-size: 1.9375rem;
+    line-height: 1.6;
+    padding: 0.3125rem 0;
+  }
+}

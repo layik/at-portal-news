@@ -1,0 +1,34 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#}
+{% set classes %}block block-{{ configuration.provider|clean_class }} {{ plugin_id|clean_class|replace({'views-blockportal-library-block':'views', 'views-blockportal-block-author':'views',  'views-blockportal-block-post':'views',  'views-blockportal-block-blog':'views'}) }}{% endset %} 
+
+<div id="{{ attributes.id }}" class="{{ classes }} {{ attributes.class }}">
+  <div class="inner">
+    {{ title_prefix }}
+    {% if label %}
+      <div class="title">
+        <h3{{ title_attributes }}>{{ label }}</h3>
+      </div>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      <div{{ content_attributes.addClass('content clearfix') }}>
+        {{ content }}
+      </div>
+    {% endblock %}
+  </div>
+</div>

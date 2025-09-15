@@ -1,0 +1,155 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMON
+----------------------------------------------------------------*/
+.article {
+  padding: 1.25rem 0;
+}
+
+.article .image-default {
+  position: relative;
+  margin-bottom: 2.8125rem;
+}
+
+.article .meta {
+  padding: 0.9375rem 0;
+}
+
+.article .meta.submit {
+  margin-bottom: 1.875rem;
+}
+
+.article .meta.submit .author,
+.article .meta.submit .date {
+  float: left;  
+  width: 50%;
+}
+
+.article .meta.link {
+  padding: 0.9375rem 0;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.article .meta.link .comment,
+.article .meta.link .share,
+.article .meta.link .read-more {
+  width: 50%;
+  float: left;
+}
+
+.article .meta.link .comment {
+  padding-left: 1.25rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.article .meta.link .read-more {
+  padding-left: 1.25rem;
+}
+
+.article .meta.link .share {
+  width: 60%;
+  line-height: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.article .share a {
+  height: 32px;
+  line-height: 32px;
+}
+
+.article .meta .share a {
+  width: 40px;
+}
+
+.article .meta .date {
+  padding-right: 1.25rem;
+}
+
+.article .meta .lowercase {
+  display: block;
+  font-weight: normal;
+}
+
+.article .user-picture {
+  float: left;
+  padding-right: 1.25rem;
+}
+
+@media screen and (min-width: 40em) {
+  .article {
+    padding: 3.75rem 3.75rem 0 3.75rem;
+  }
+
+  .article .meta.link .comment,
+  .article .meta.link .read-more {
+    width: 20%;
+  }
+
+  .article .meta.link .share {
+    width: 60%;
+  }
+}
+
+/* TEASER
+----------------------------------------------------------------*/
+.article.teaser .image-default a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.article.teaser .image-default a:hover::after {
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.9);
+}
+
+.article.teaser .image-default img {
+  width: 100%;
+}
+
+.article.teaser .title {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.article.teaser .content {
+  font-size: 0.9375rem;
+  padding: 0 1.25rem;
+  margin-bottom: 2.8125rem;
+}
+
+@media screen and (min-width: 40em) {
+  .article.teaser .title {
+    font-size: 2.75rem;
+  }
+}
+
+/* FULL
+----------------------------------------------------------------*/
+/* Header Top
+--------------------------------*/
+.article.full > header .title {
+  margin-bottom: 1.875rem;
+}
+
+.article.full section.tags {
+  padding: 1.875rem 1.25rem;
+}

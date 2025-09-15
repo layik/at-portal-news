@@ -1,0 +1,357 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#}
+{% set items = rows|length %}
+
+{% if items >= 3 %}
+
+  <div class="row column"> 
+
+    {% if title %}
+      <div class="title"><h2>{{title}}</h2></div>
+    {% endif %}
+    
+    {% set column_1 = '' %}
+    {% set column_2 = '' %}
+    {% set column_3 = '' %}
+    {% set column_4 = '' %}
+    {% set column_5 = '' %}
+    {% set column_6 = '' %}
+
+    <div class="content">
+    
+      {% if items == 3 %}      
+        
+        {% for row in rows %}     
+          {% set column %}
+            {% spaceless %}
+              {{ row.content }}
+            {% endspaceless %}
+          {% endset %}        
+          
+          {% if loop.index==1 %}
+            {% set column = keep_image(column, 'large') %}
+            {% set column_1 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==2 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_2 %}
+              {{ column|raw }}          
+            {% endset %}       
+          {% else %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_3 %}
+              {{ column|raw }}          
+            {% endset %} 
+          {% endif %}    
+        {% endfor %}
+
+        <div class="row">
+          <div class="large-6 column column-medium"><div class="inner">{{ column_1 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_2 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_3 }}</div></div>
+        </div>
+      
+      {% elseif items == 4 %}
+        
+        {% for row in rows %}     
+          {% set column %}
+            {% spaceless %}
+              {{ row.content }}
+            {% endspaceless %}
+          {% endset %}        
+          
+          {% if loop.index==1 %}
+            {% set column = keep_image(column, 'large') %}
+            {% set column_1 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==2 %}
+            {% set column = keep_image(column, 'medium') %}
+            {% set column_2 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==3 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_3 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% else %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_4 %}
+              {{ column|raw }}          
+            {% endset %} 
+          {% endif %}    
+        {% endfor %}
+
+        <div class="row">
+          <div class="large-12 column column-large"><div class="inner">{{ column_1 }}</div></div>
+        </div>
+        <div class="row">
+          <div class="large-6 column column-medium"><div class="inner">{{ column_2 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_3 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_4 }}</div></div> 
+        </div>
+      
+      {% elseif items == 5 %}
+      
+        {% for row in rows %}     
+          {% set column %}
+            {% spaceless %}
+              {{ row.content }}
+            {% endspaceless %}
+          {% endset %}        
+          
+          {% if loop.index==1 %}
+            {% set column = keep_image(column, 'large') %}
+            {% set column_1 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==2 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_2 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==3 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_3 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==4 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_4 %}
+              {{ column|raw }}          
+            {% endset %} 
+          {% else %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_5 %}
+              {{ column|raw }}          
+            {% endset %}
+          {% endif %}    
+        {% endfor %}
+
+        <div class="row">
+          <div class="large-12 column column-large"><div class="inner">{{ column_1 }}</div></div>
+        </div>
+        <div class="row">
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_2 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_3 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_4 }}</div></div> 
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_5 }}</div></div> 
+        </div>
+      
+      {% elseif items == 6 %}
+      
+        {% for row in rows %}   
+          {% set column %}
+            {% spaceless %}
+              {{ row.content }}
+            {% endspaceless %}
+          {% endset %}           
+
+          {% if loop.index==1 %}
+            {% set column = keep_image(column, 'large') %}
+            {% set column_1 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==2 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_2 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==3 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_3 %}
+              {{ column|raw }}          
+            {% endset %}
+          {% else %}
+            {% set column = keep_image(column, 'nothing') %}
+            {% set column_4 %}
+               {{column_4}}<li>{{ column|raw }}</li>          
+            {% endset %}
+          {% endif %}    
+        {% endfor %}
+
+        <div class="row">
+          <div class="large-12 column column-large"><div class="inner">{{ column_1 }}</div></div>
+        </div>
+        <div class="row">
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_2 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_3 }}</div></div>
+          <div class="large-6 column column-list"><div class="inner"><ul class="no-bullet">{{ column_4 }}</ul></div></div>
+        </div> 
+      
+      {% elseif items == 7 %}
+      
+        {% for row in rows %}     
+          {% set column %}
+            {% spaceless %}
+              {{ row.content }}
+            {% endspaceless %}
+          {% endset %}        
+          
+          {% if loop.index==1 %}
+            {% set column = keep_image(column, 'medium') %}
+            {% set column_1 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==2 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_2 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==3 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_3 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==4 %}
+            {% set column = keep_image(column, 'medium') %}
+            {% set column_4 %}
+              {{ column|raw }}          
+            {% endset %} 
+          {% else %}
+            {% set column = keep_image(column, 'nothing') %}
+            {% set column_5 %}
+               {{column_5}}<li>{{ column|raw }}</li>          
+            {% endset %}
+          {% endif %}    
+        {% endfor %}
+
+        <div class="row">
+          <div class="large-6 column column-medium"><div class="inner">{{ column_1 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_2 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_3 }}</div></div>
+        </div>
+        <div class="row">
+          <div class="large-6 large-push-6 column column-medium"><div class="inner">{{ column_4 }}</div></div> 
+          <div class="large-6 large-pull-6 column column-list"><div class="inner"><ul class="no-bullet">{{ column_5 }}</ul></div></div>   
+        </div> 
+      
+      {% elseif items == 8 %}
+      
+        {% for row in rows %}     
+          {% set column %}
+            {% spaceless %}
+              {{ row.content }}
+            {% endspaceless %}
+          {% endset %}        
+          
+          {% if loop.index==1 %}
+            {% set column = keep_image(column, 'medium') %}
+            {% set column_1 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==2 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_2 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==3 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_3 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==4 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_4 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==5 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_5 %}
+              {{ column|raw }}          
+            {% endset %}     
+          {% else %}
+            {% set column = keep_image(column, 'nothing') %}
+            {% set column_6 %}
+               {{column_6}}<li>{{ column|raw }}</li>          
+            {% endset %}
+          {% endif %}    
+        {% endfor %}
+
+        <div class="row">
+          <div class="large-6 column column-medium"><div class="inner">{{ column_1 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_2 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_3 }}</div></div>
+        </div>
+        <div class="row">
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_4 }}</div></div> 
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_5 }}</div></div>  
+          <div class="large-6 column column-list"><div class="inner"><ul class="no-bullet">{{ column_6 }}</ul></div></div>   
+        </div> 
+
+      {% else %}      
+
+        {% for row in rows %}     
+          {% set column %}
+            {% spaceless %}
+              {{ row.content }}
+            {% endspaceless %}
+          {% endset %}        
+          
+          {% if loop.index==1 %}
+            {% set column = keep_image(column, 'medium') %}
+            {% set column_1 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==2 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_2 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==3 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_3 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==4 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_4 %}
+              {{ column|raw }}          
+            {% endset %}          
+          {% elseif loop.index==5 %}
+            {% set column = keep_image(column, 'small') %}
+            {% set column_5 %}
+              {{ column|raw }}          
+            {% endset %}     
+          {% elseif loop.index==6 or loop.index==7 or loop.index==8 %}
+            {% set column = keep_image(column, 'nothing') %}
+            {% set column_6 %}
+               {{column_6}}<li>{{ column|raw }}</li>          
+            {% endset %}
+          {% else %}
+          {% endif %}    
+        {% endfor %}
+
+        <div class="row">
+          <div class="large-6 column column-medium"><div class="inner">{{ column_1 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_2 }}</div></div>
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_3 }}</div></div>
+        </div>
+        <div class="row">
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_4 }}</div></div> 
+          <div class="medium-6 large-3 column column-small"><div class="inner">{{ column_5 }}</div></div>  
+          <div class="large-6 column column-list"><div class="inner"><ul class="no-bullet">{{ column_6 }}</ul></div></div>   
+        </div>
+
+      {% endif %} 
+
+    </div>
+  </div>
+{% endif %}
+

@@ -1,0 +1,52 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+<ul{{ attributes }}>
+  {%- for key, item in links -%} 
+    {% if key == 'comment-delete' %}
+      <li{{ item.attributes.addClass(key|clean_class) }}>
+        <a href="{{ item.link['#url'] }}" title="{{ item.link['#title'] }}"><span class="fa fa-times"></span></a>
+      </li>
+    {% elseif key == 'comment-edit' %}
+      <li{{ item.attributes.addClass(key|clean_class) }}>
+        <a href="{{ item.link['#url'] }}" title="{{ item.link['#title'] }}"><span class="fa fa-pencil"></span></a>
+      </li>
+    {% elseif key == 'comment-reply' %}
+      <li{{ item.attributes.addClass(key|clean_class) }}>
+      <a href="{{ item.link['#url'] }}" title="{{ item.link['#title'] }}"><span class="fa fa-reply"></span></a>
+      </li>
+    {% elseif key == 'comment-approve' %}
+      <li{{ item.attributes.addClass(key|clean_class) }}>
+        <a href="{{ item.link['#url'] }}" title="{{ item.link['#title'] }}"><span class="fa fa-check"></span></a>
+      </li>
+    {% elseif key == 'comment-forbidden' %}
+      <li{{ item.attributes.addClass(key|clean_class) }}>
+        <a href="{{ item.text.arguments[':login'] }}" title="Log In"><span class="fa fa-user"></span></a>
+      </li>         
+      <li{{ item.attributes.addClass(key|clean_class) }}>
+        <a href="{{ item.text.arguments[':register'] }}" title="Register"><span class="fa fa-pencil"></span></a>  
+      </li>
+    {% else %}
+      <li{{ item.attributes.addClass(key|clean_class) }}>
+        {%- if item.link -%}
+          {{ item.link }}
+        {%- else -%}
+          {{ item.text }}
+        {%- endif -%}
+      </li>
+    {% endif %}
+  {%- endfor -%}
+</ul>

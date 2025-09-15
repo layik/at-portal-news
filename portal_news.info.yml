@@ -1,0 +1,59 @@
+name: Portal News
+type: theme
+description: ''
+package: Custom
+
+version: 10.x-1.0
+base theme: stable
+
+libraries:
+  - core/normalize
+  - portal_news/foundation
+  - portal_news/slick
+  - portal_news/global-styling
+  - portal_news/global-script
+  
+regions:  
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'    
+
+  site_info: 'Site info'
+  social_media: 'Social media'
+  search: 'Search'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  headline: 'Headline'
+
+  primary_menu: 'Menu main'
+  primary_menu_mobile: 'Menu mobile'
+  primary_menu_mega: 'Menu mega'
+  secondary_menu: 'Menu secondary'
+
+  main_top_upper: 'Main top - upper'
+  main_top_one: 'Main top - one'
+  main_top_two: 'Main top - two'
+  main_top_three: 'Main top - three'
+  main_top_lower: 'Main top - lower'
+
+  content: 'Main middle - primary' 
+  sidebar_secondary: 'Main middle - secondary'
+  sidebar_tertiary: 'Main middle - tertiary'
+
+  main_bottom_upper: 'Main bottom - upper'
+  main_bottom_one: 'Main bottom - one'
+  main_bottom_two: 'Main bottom - two'
+  main_bottom_three: 'Main bottom - three'
+  main_bottom_lower: 'Main bottom - lower'
+
+  prev_next: 'Prev/Next'
+  author: 'Author'
+  related: 'Related'
+
+  subscription: 'Subscription'
+  footer_one: 'Footer - one'
+  footer_two: 'Footer - two'
+  footer_three: 'Footer - three'
+  footer_four: 'Footer - four'
+  closure: 'Closure'
+  usable: 'Usable'
+core_version_requirement: ^9 || ^10

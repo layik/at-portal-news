@@ -1,0 +1,274 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* BASE COLOR 
+----------------------------------------------------------------*/
+/* Text
+---------------------------------*/
+body { 
+  color: #555555;
+}
+
+/* Title
+---------------------------------*/
+h1, h2, h3, h4, h5, h6 { 
+  color: #333333;
+}
+
+/* Link
+---------------------------------*/
+a {
+  color: #f55152;
+}
+
+/* Link Active
+---------------------------------*/
+a:focus, a:hover {
+  color: #a00000;
+}
+
+/* Meta
+---------------------------------*/
+.meta {
+  color: #696969;
+}
+
+/* Background
+---------------------------------*/
+body { 
+  background-color: #222222; 
+} 
+
+/* Foreground
+---------------------------------*/
+#page {
+  background-color: #ffffff; 
+}
+
+/* Header Background
+---------------------------------*/
+#header {
+  background-color: #2d2d2e;
+}
+
+/* Header Foreground
+---------------------------------*/
+#header .mega-menu {
+  background-color: #202022; 
+}
+
+/* MATCHING COLOR
+----------------------------------------------------------------*/
+/* Text
+---------------------------------*/
+p.drop-cap:first-letter,
+.post.teaser .read-more a,
+.article .meta.link .share a {
+  color: #555555; 
+}
+
+/* Title
+---------------------------------*/
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: #333333;
+}
+
+#main-top .title h3,
+#secondary .title h3,
+#main-bottom .title h3:before,
+#tertiary .title h3:before,
+.node > .content section .title h3:before {
+  background-color: #333333;
+}
+
+#main-top .title h3:before,
+#secondary .title h3:before {
+  border-left-color: #333333;
+}
+
+/* Link
+---------------------------------*/
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
+h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus,
+.site-name a,
+#footer .menu > li > a:hover,
+.node > .content .links a:hover,
+.node > .content .tags a:hover,
+.post.teaser .read-more a:hover {
+  color: #f55152;
+}
+
+.category a,
+.button:hover, .button:focus,
+#content-tab li a:hover {
+  background-color: #f55152;
+}
+
+.node > .content .links a:hover,
+.node > .content .tags a:hover,
+.post.teaser .read-more a:hover {
+  border-color: #f55152;
+}
+
+/* Link Active
+---------------------------------*/
+.site-name a:hover {
+  color: #a00000;
+}
+
+.category a:hover {
+  background-color: #a00000;
+}
+
+.pager ul a:hover,
+.pager ul .current a {
+  border-color: #a00000;
+}
+
+/* Meta
+---------------------------------*/
+.post.full .summary,
+label {
+  color: #696969;
+}
+
+/* Foreground
+---------------------------------*/
+.off-canvas-content,
+#main-bottom .title h3,
+#tertiary .title h3,
+.node > .content section .title,
+#header-bottom {
+  background-color: #ffffff;
+}
+
+.comment .meta:after {
+  border-top-color: #ffffff;
+}
+
+/* Header Background
+---------------------------------*/
+.off-canvas-wrapper {
+  background-color: #2d2d2e;
+}
+
+/* Header Foreground
+---------------------------------*/
+#main-top-lower,
+#main-bottom-upper,
+#main-bottom-upper .title h3,
+#footer,
+#site-info-alter .site-name,
+#site-info-alter .site-logo {
+  background-color: #202022;
+}
+
+/* Menu
+---------------------------------*/
+#menu-primary a:hover,
+#menu-primary ul.dropdown > li.is-active > a,
+#menu-mega ul.dropdown > li > a:hover,
+#menu-mega ul.dropdown > li.is-active > a,
+#mobile-button button:hover,
+#menu-secondary ul.menu li a:hover {
+  color: #f55152;
+}
+
+#menu-sub a.login:hover {
+  background-color: #f55152;
+}
+
+#menu-primary ul.dropdown > li > a:hover,
+#menu-primary ul.dropdown > li.is-active > a,
+#menu-mega ul.dropdown > li > a:hover,
+#menu-mega ul.dropdown > li.is-active > a,
+#mobile-button button:hover {
+  border-color: #f55152;
+}
+
+#menu-primary ul.dropdown > li.is-active > a,
+#menu-primary .submenu,
+#menu-mega ul.dropdown > li.is-active > a,
+.mega-menu,
+#menu-mobile .submenu  {
+  background-color: #202022;
+}
+
+#menu-secondary ul.menu li a {
+  color: #555555;
+}
+
+/* Showcase
+---------------------------------*/
+.slick-dots li.slick-active button:before {
+  color: #f55152;
+}
+
+.showcase-basic .slide-content {
+  color: #696969;
+}
+
+/* View
+---------------------------------*/
+.view.page-post-category .title h2 {
+  background-color: #ffffff;
+}
+
+.view.page-post-category .title h2:before {  
+  background-color: #333333;
+}
+
+.view.page-post-category .fa,
+.view.page-post-category .column-large .content h3 a:hover,
+.view.page-post-category .column-medium .content h3 a:hover,
+.view.page-post-category .author a:hover,
+.view.page-post-category .column-large .author a:hover,
+.view.page-post-category .column-medium .author a:hover,
+.block-views h4 a:hover,
+.block-post-headline .column-1 .content h3 a:hover,
+.block-post-headline .column-2 .content h3 a:hover,
+.block-post-popular .author a:hover,
+.block-post-popular .column-1 .content h4 a:hover,
+.block-post-popular .column-1 .author a,
+.block-blog-comment li a:hover,
+.block-post-comment li a:hover {
+  color: #f55152;
+}
+
+.block-post-popular .column-1 .author a:hover {  
+  color: #a00000;
+}
+
+.view.page-post-category .author,
+.view.page-post-category .author a {
+  color: #696969;
+}
+
+.block-post-feature .slide,
+#author, #author:before, #author:after {
+  background-color: #202022;
+}
+
+.block-blog-comment li a,
+.block-post-comment li a,
+#author .title h3 {
+  color: #555555;
+}
+
+/* Others
+---------------------------------*/
+.addtoany_list a:hover {
+  background-color: #c7a462;
+}

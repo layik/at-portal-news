@@ -1,0 +1,37 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#}
+<section id="comment" {{ attributes }}>
+  {% if comments %}  
+    <div id="comment-post" class="clearfix">
+      <header>
+        <h3 class="title">{{ 'Comments'|t }}</h3>
+      </header>
+      <div class="comments">
+        {{ comments }}
+      </div>
+    </div>
+  {% endif %}  
+
+  {% if comment_form %}
+    <div id="comment-box" class="clearfix">
+      <header>
+        <h3 class="title">{{ 'Join the conversation'|t }}</h3>
+      </header>
+      {{ comment_form }}
+    </div>
+  {% endif %}
+</section>

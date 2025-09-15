@@ -1,0 +1,61 @@
+# Ignore Drupal core and contrib modules
+/core/
+/modules/
+/profiles/
+/sites/*/files/
+/sites/*/private/
+/sites/*/simpletest/
+/sites/*/settings.php
+/sites/*/services.yml
+/sites/*/development.services.yml
+/sites/*/local.settings.php
+/sites/*/local.services.yml
+/sites/*/default.settings.php
+/sites/*/default.services.yml
+/sites/*/default.local.settings.php
+/sites/*/default.local.services.yml
+
+# Ignore vendor directory
+/vendor/
+
+# Ignore Composer files
+composer.lock
+composer.phar
+
+# Ignore node_modules and npm debug log
+node_modules/
+npm-debug.log
+
+# Ignore IDE/editor files
+*.swp
+*.swo
+*.idea/
+*.vscode/
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore backup files
+*.bak
+
+# Ignore generated CSS/JS (if applicable)
+css/*/*.css.map
+js/*/*.js.map
+
+# Ignore screenshots and other generated images
+screenshot.png
+images/ajax-loader.gif
+
+# Ignore color previews
+color/preview.*
+
+# Ignore config sync directory (if present)
+config/sync/
+
+# Ignore test output
+junit.xml
+
+# Ignore misc files
+.env

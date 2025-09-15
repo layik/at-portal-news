@@ -1,0 +1,129 @@
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+
+/* COMMON
+----------------------------------------------------------------*/
+.meta {
+ margin-bottom: 0.9375rem;
+}
+
+.node > .content section {  
+  position: relative;
+  padding: 1.875rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.node > .content section .title {  
+  position: absolute;
+  left: 0;
+  top: -0.75rem;
+}
+
+.node > .content section .title h3 {  
+  display: inline-block;
+  font-size: 1.125rem;
+  line-height: 1;
+  padding: 0 1.25rem;
+  margin-bottom: 0;
+}
+
+.node > .content section .title h3:before {  
+  position: absolute;
+  left: 0;
+  top: 5px;
+  content: '';
+  width: 5px;
+  height: 10px;
+}
+
+.node > .content .links {  
+  padding: 1.875rem 1.25rem;
+}
+
+.node > .content .tags {  
+  padding: 1.875rem 0 1.875rem 1.25rem;
+}
+
+.node > .content .related {  
+  padding: 1.875rem 0 0 0;
+}
+
+.node > .content .links a,
+.node > .content .tags a,
+.node > .content .statistics-counter {
+  display: inline-block;
+  font-size: 0.625rem;
+  line-height: 1;
+  text-transform: uppercase;
+  padding: 0.625rem 0.875rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.02);
+  transition: all 0.5s ease-in-out;
+}
+
+.node > .content .links a,
+.node > .content .statistics-counter {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.node > .content .links ul {
+  margin-bottom: 0;
+}
+
+.node > .content .links li {
+  display: inline-block;
+}
+
+.node > .content .prev,
+.node > .content .next {
+  width: 50%;
+  float: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.node > .content .prev {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.node > .content .next {
+  text-align: right;
+}
+
+.node > .content .prev span.fa,
+.node > .content .next span.fa {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.node > .content .prev span.fa {
+  margin-right: 1.875rem;
+}
+
+.node > .content .next span.fa {
+  margin-left: 1.875rem;
+}
+
+@media screen and (min-width: 40em) {
+  .content-main p {
+    margin-bottom: 2.5rem;
+  }
+}

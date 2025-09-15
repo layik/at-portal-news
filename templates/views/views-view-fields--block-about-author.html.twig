@@ -1,0 +1,27 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+
+<div class="media-object stack-for-small">
+  <div class="media-object-section middle text-center">
+    <div class="user-picture">{{ fields['user_picture'].content }}</div>
+  </div>
+  <div class="media-object-section">
+		<span class="user-name">{{ fields['name'].content }}</span>
+		<span class="user-title"> - {{ fields['field_title'].content }}</span>
+		<div class="user-profile">{{ fields['field_profile'].content }}</div>
+  </div>
+</div>

@@ -1,0 +1,206 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+
+{# PRINT TITLE   
+----------------------------------------------------------------#}
+{% macro block_title(block_content, title_prefix, title_suffix, mergin_type) %}
+  {% set title = block_content.field_title.value %}
+  {% if title %}
+    {% set subtitle = block_content.field_subtitle.value %}
+    {% set subtitle_position = block_content.field_subtitle_position.value %}
+    {% set title_align = block_content.field_title_align.value %}
+    {% set title_case = block_content.field_title_case.value %}
+    {% set title_border = block_content.field_title_border.value %}
+    {% set title_color = block_content.field_title_color.value %}
+    {% set title_size = block_content.field_title_size.value %}
+    {% set url = block_content.field_link.uri %}
+
+    {% if title_color is not empty %} 
+      {% set style %}style="color:#{{title_color}};border-color:#{{title_color}};"{% endset %}
+      {% set substyle %}style="color:#{{title_color}};"{% endset %}
+    {% endif %} 
+    
+    {{ title_prefix }}
+    <div class="title{% if mergin_type=='horizontal' %} column row{% endif %}">
+      {% if subtitle and subtitle_position == true %}
+        <div class="subtitle {{ title_align }}" {{ substyle }}>{{ subtitle }}</div>
+      {% endif %}
+      <h3 class="{{ title_size }} {{ title_align }}{% if title_case %} uppercase{% endif %}{% if title_border %} with-border{% endif %}" {{ style }}{{ title_attributes }}>{% if url %}<a href="{{ url }}" target="_blank">{% endif %}{{ title }}{% if url %}</a>{% endif %}</h3>
+      {% if subtitle and subtitle_position == false %}
+        <div class="subtitle {{ title_align }}" {{ substyle }}>{{ subtitle }}</div>
+      {% endif %}
+    </div>
+    {{ title_suffix }}
+
+  {% endif %}
+{% endmacro %}
+
+{# PRINT MEDIA  
+----------------------------------------------------------------#}
+{% macro block_media(block_content, content) %}
+
+  {% set media_position_h = block_content.field_media_position_horizontal.value %}
+  {% set media_float = block_content.field_media_float.value %}
+  {% if media_float %}
+    {% set position %} float-{{media_position_h}}{% endset %}
+  {% else %}
+    {% set position = '' %}
+  {% endif %}
+  {% set url = block_content.field_link.uri %}
+  {% set url_target = block_content.field_link_target_blank.value %}
+
+  {% if content.field_image|render %}
+    {% set width = block_content.field_image_width.value %} 
+    {% set padding = block_content.field_image_padding.value %}  
+    {% set filter = block_content.field_image_filter.value %} 
+
+    {% set class_setting %}media-image{{position}}{% if filter %} with-filter {{ filter }}{% endif %}{% if width == false %} auto-width{% endif %}{% if padding == false %} without-padding{% endif %}{% endset %}
+
+    <div class="{{ class_setting }}">
+      {% if url %}
+        {% if filter %}
+          {{ content.field_image }}
+          <a href="{{ url }}" class="cover" {% if url_target %} target="_blank"{% endif %}></a>
+        {% else %}
+          <a href="{{ url }}" {% if url_target %} target="_blank"{% endif %}>{{ content.field_image }}</a>
+        {% endif %}
+      {% else %}
+        {{ content.field_image }}
+      {% endif %}    
+    </div> 
+  {% endif %}
+  {% if content.field_icon|render %}
+    {% set icon = block_content.field_icon.value %}
+    {% set icon_color = block_content.field_icon_color.value %}
+    {% set icon_background_color = block_content.field_icon_background_color.value %}
+    {% set icon_border = block_content.field_icon_border.value %}
+    {% set icon_rounded = block_content.field_icon_rounded.value %}
+    {% set icon_size = block_content.field_icon_size.value %}
+
+    {% if icon_color %} 
+      {% set style = 'color:#' ~ icon_color ~ ';' %}
+    {% endif %} 
+    {% if icon_background_color %} 
+      {% set style = style~'background-color:#' ~ icon_background_color ~ ';' %}
+    {% endif %} 
+    
+    <div class="media-icon{{ ' '~icon_size }}{% if icon_rounded %} rounded{% endif %}{% if icon_border %} with-border{% endif %}">{% if url %}<a href="{{ url }}" target="_blank">{% endif %}<span class="{{ icon }}"{% if style %} style="{{ style }}"{% endif %}></span>{% if url %}</a>{% endif %}</div>    
+  {% endif %}
+{% endmacro %}
+
+{# PRINT BODY  
+----------------------------------------------------------------#}
+{% macro block_body(block_content, content, mergin_type) %}
+  {% if content.body|render or content.field_button|render %}
+    <div class="content{% if mergin_type=='horizontal' %} column row{% endif %} clearfix">
+      {{ content.body }}
+      {% if content.field_button|render %}
+        {% set button_align = block_content.field_button_align.value %}
+        <div class="content-button {{ button_align }}">
+          {{ content.field_button }}
+        </div>
+      {% endif %} 
+    </div>
+  {% endif %} 
+{% endmacro %}
+
+{# PRINT BACKGROUND   
+----------------------------------------------------------------#}
+{% macro block_style(block_content, content) %}
+  {% set body_text_color = block_content.field_body_text_color.value %}  
+  {% set background_color = block_content.field_background_color.value %}
+  {% set background_image = content.field_background_image %}
+  {% set style = '' %}
+
+  {% if body_text_color %} 
+    {% set style = 'color:#' ~ body_text_color ~ ';' %}
+  {% endif %} 
+
+  {% if background_color %} 
+    {% set style = style~'background-color:#' ~ background_color ~ ';' %}
+  {% endif %} 
+
+  {% if background_image|render %}     
+    {% set image %}{{ background_image|raw }}{% endset %}
+    {% set background_size = block_content.field_background_size.value %}
+    {% set background_v_position = block_content.field_background_v_position.value %}
+    {% set background_h_position = block_content.field_background_h_position.value %}
+    {% set background_repeat = block_content.field_background_repeat.value %}
+
+    {% if background_size != 'cover' %}       
+      {% set position %}background-position: {{background_v_position}} {{background_h_position}};{% endset %}
+      {% set repeat %}background-repeat: {{background_repeat}};{% endset %}
+    {% endif %} 
+    
+    {% set size %}background-size: {{background_size}};{% endset %}
+
+    {% set style %} 
+      {{style}}{{ background_image(image) }}{{size}}{{position}}{{repeat}}
+    {% endset %}
+  {% endif %}  
+  {{ style }}  
+{% endmacro %}
+
+{# PRINT REVEAL   
+----------------------------------------------------------------#}
+{% macro block_reveal(block_content) %}
+  {% set reveal_origin = block_content.field_block_reveal_origin.value %}
+  {% set reveal_speed = block_content.field_block_reveal_speed.value %}
+  {% set reveal_delay = block_content.field_block_reveal_delay.value %}
+  {% set reveal_distance = block_content.field_block_reveal_distance.value %}
+  {% set reveal_reset = block_content.field_block_reveal_reset.value %}
+  {% if reveal_reset == true %}
+     {% set reveal_reset = ' reveal-reset' %}
+  {% else %}
+     {% set reveal_reset = '' %}
+  {% endif %}
+  {% set reveal_setting %} block-reveal {{reveal_origin}} {{reveal_speed}} {% if reveal_delay %}{{reveal_delay}} {% endif %}{{reveal_distance}}{{reveal_reset}}{% endset %}
+  {{ reveal_setting }}  
+{% endmacro %}
+
+{# PRINT MERGING CLASS   
+----------------------------------------------------------------#}
+{% macro block_merging_class(block_content, column_count, merging_even) %}
+  {% set mergin_width = block_content.field_merging_width.value %}  
+  {% set mergin_collapse = block_content.field_merging_collapse.value %}
+
+  {% if mergin_collapse == true %}
+    {% set collapes_setting = ' collapse' %}
+  {% else %}
+    {% set collapes_setting = ' uncollapse' %}
+  {% endif %}
+ 
+  {% if merging_even == true or column_count == 1 or column_count > 4 %}
+    {% if column_count == 1 %}
+      {% set merging_class %}{{ mergin_width }} column row{{ collapes_setting }}{% endset %}
+    {% elseif column_count == 2 %}
+      {% set merging_class %}{{ mergin_width }} row medium-up-1 large-up-2{{ collapes_setting }}{% endset %}
+    {% elseif column_count == 3 %}
+      {% set merging_class %}{{ mergin_width }} row small-up-1 medium-up-2 large-up-3{{ collapes_setting }}{% endset %}
+    {% elseif column_count == 4 %}
+      {% set merging_class %}{{ mergin_width }} row small-up-1 medium-up-2 large-up-4{{ collapes_setting }}{% endset %}
+    {% elseif column_count == 5 %}
+      {% set merging_class %}{{ mergin_width }} row small-up-1 medium-up-3 large-up-5{{ collapes_setting }}{% endset %}
+    {% elseif column_count == 6 %}
+      {% set merging_class %}{{ mergin_width }} row small-up-1 medium-up-2 large-up-3 xlarge-up-6{{ collapes_setting }}{% endset %}
+    {% else %}
+    {% endif %} 
+  {% else %}
+    {% set merging_class %}{{ mergin_width }} row{{ collapes_setting }}{% endset %}
+  {% endif %} 
+  {{ merging_class }}
+{% endmacro %}

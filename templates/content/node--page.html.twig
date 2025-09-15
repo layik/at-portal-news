@@ -1,0 +1,44 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+{% if not page %}
+  {% set classes %}node article teaser clearfix{% endset %}
+  <article{{ attributes.addClass(classes) }}>
+    <header>
+      {{ title_prefix }}
+        <h2 class="title text-center"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h2>
+      {{ title_suffix }}           
+    </header>
+    <div class="content">
+      {{ content|without('comment', 'links', 'addtoany') }}
+    </div>    
+    <div class="meta link clearfix">
+      <div class="read-more"><a href="{{ url }}"><span class="lowercase">&#8594;</span>{{ 'READ MORE'|t }}</a></div> 
+    </div>
+  </article>
+{% else %}
+  {% set classes %}node article full clearfix{% endset %}  
+  <article{{ attributes.addClass(classes) }}>
+    <header>
+      <h1 class="title text-center">{{ label }}</h1>      
+    </header>
+    <div class="content">
+      <div class="content-main">
+        {{ content|without('comment', 'links', 'addtoany') }} 
+      </div>       
+    </div>    
+  </article>
+{% endif %}

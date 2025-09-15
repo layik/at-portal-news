@@ -1,0 +1,51 @@
+global-styling:
+  version: VERSION
+  css:
+    component:
+      css/components/portal.css: {}
+      css/components/portal-header.css: {}
+      css/components/portal-menu.css: {}
+      css/components/portal-reveal.css: {}
+      css/components/portal-showcase.css: {}
+      css/components/portal-block.css: {}
+      css/components/portal-block-custom.css: {}
+      css/components/portal-node.css: {}
+      css/components/portal-node-article.css: {}          
+      css/components/portal-node-post.css: {}    
+      css/components/portal-comment.css: {}    
+      css/components/portal-form.css: {} 
+      css/components/portal-button.css: {} 
+      css/components/portal-view-block.css: {}
+      css/components/portal-view-page.css: {}
+      css/components/portal-editor.css: {}
+    theme:
+      css/theme/portal-color-dynamic.css: {}
+      css/theme/portal-color-static.css: {}
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external }
+      https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Merriweather:400,700,900": { type: external } 
+      
+global-script:
+  version: VERSION
+  js:
+    js/portal.js: {}
+  dependencies:
+    - core/jquery
+
+slick:
+  version: VERSION
+  css:
+    component:
+      css/vendor/slick.css: {}
+      css/vendor/slick-theme.css: {}
+  js:
+    js/vendor/slick.min.js: {}
+
+foundation:
+  version: VERSION
+  css:
+    component:
+      css/base/foundation.min.css: {}
+  js:
+    js/vendor/what-input.js: {} 
+    js/vendor/foundation.min.js: {} 
+    js/vendor/app.js: {}

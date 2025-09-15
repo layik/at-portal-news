@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display previous next block.
+ *
+ * Available variables:
+ * - prev_display: Flag for displaying previous text.
+ * - prev_text: Previous text.
+ * - prev_id: Previous Entity Id.
+ * - next_display: Flag for displaying next text.
+ * - next_text: Next text.
+ * - next_id: Next Entity id.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if prev_display %}
+  <div class="prev"><a href="{{ url('<front>') }}node/{{ prev_id }}"><span class="fa fa-chevron-left" aria-hidden="true"></span><span class="nav show-for-medium">{{ prev_text }}</span></a></div>
+{% endif %}
+{% if next_display %}
+  <div class="next"><a href="{{ url('<front>') }}node/{{ next_id }}"><span class="nav show-for-medium">{{ next_text }}</span><span class="fa fa-chevron-right" aria-hidden="true"></span></a></div>
+{% endif %}

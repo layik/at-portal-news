@@ -1,0 +1,31 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+<div id="{{ attributes.id }}" class="block block-showcase">
+  <div class="inner">
+    {{ title_prefix }}
+    {% if label %}
+      <div class="title">
+        <h3{{ title_attributes }}>{{ label }}</h3>
+      </div>
+    {% endif %}
+    {{ title_suffix }}
+    <div class="row collapse">
+      <div class="large-8 column">
+        <div class="showcase showcase-basic showcase-1"{{data_slick|raw}}>
+          {{ content.field_showcase_slide }}
+  </div>
+</div>

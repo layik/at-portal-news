@@ -1,0 +1,189 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#}
+<div class="off-canvas-wrapper">
+  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+    <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+      {% if page.primary_menu_mobile %}
+        <div id="menu-mobile"> 
+          <div class="site-info text-center">
+            {% if page.site_info %}          
+              {{ page.site_info }}
+            {% endif %}
+          </div>
+          <div class="menu-sub text-center">
+            <a class="button rounded login" href="{{ base_path }}user">Login</a>
+            <a class="button rounded register" href="{{ base_path }}user/register">Register</a>
+            <a class="button rounded search" data-toggle="reveal-search">Search</a>
+            <a class="button rounded close" aria-label="Close menu" type="button" data-close>
+              <span aria-hidden="true">&times;</span>
+            </a>
+          </div>  
+          {{ page.primary_menu_mobile }}
+          {% if page.social_media %}
+            <div class="social-media">
+              {{ page.social_media }}
+            </div>
+          {% endif %} 
+        </div>
+      {% endif %} 
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div id="page">
+        <header id="header">
+          <div id="header-top">
+            <div class="inner wrapper">
+              <div class="row collapse">
+                {% if page.social_media %}
+                  <div id="mobile-button" class="small-2 medium-3 large-1 column">                                      
+                  </div>
+                  <div id="social-media" class="large-3 column show-for-large">
+                    {{ page.social_media }}
+                  </div>
+                {% else %}
+                  <div id="mobile-button" class="small-2 medium-3 large-4 column">                                     
+                  </div>
+                {% endif %}
+                <div id="site-info" class="small-10 medium-6 large-4 column text-center">                  
+                  <div>     
+                    {% if logo %}
+                      <div class="site-logo">
+                        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+                          <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
+                        </a>
+                      </div>
+                    {% else %}
+                      <div class="site-name">
+                        <h1><a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a></h1>
+                      </div>
+                    {% endif %}
+                    {% if site_slogan %}
+                      <div class="site-slogan">
+                        {{ site_slogan }}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div id="menu-sub" class="medium-3 large-4 column show-for-medium text-right">
+                  <a class="button rounded login show-for-large" href="{{ base_path }}user">Login</a>
+                  <a class="button rounded register show-for-large" href="{{ base_path }}user/register">Sign Up</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="header-middle" class="show-for-large">
+            <div class="inner wrapper">
+              {% if page.primary_menu and page.primary_menu_mega == false %}
+                <div id="menu-primary">
+                  {{ page.primary_menu }}
+                </div>
+              {% endif %}
+              {% if page.primary_menu_mega %}
+                <div id="menu-mega">
+                  {{ page.primary_menu_mega }}
+                </div>
+              {% endif %}         
+            </div>  
+          </div> 
+          <div id="header-bottom" class="show-for-medium">
+            <div class="inner wrapper">
+              <div class="row collapse">
+                <div id="menu-secondary" class="large-8 column show-for-large">  
+                  {{ page.secondary_menu }}              
+                </div>
+                {% if page.search %}
+                  <div id="site-search" class="medium-6 large-4 column">  
+                    {{ page.search }}              
+                  </div>
+                {% endif %} 
+              </div>             
+            </div>  
+          </div> 
+          <div class="large reveal fast" id="reveal-search" data-reveal data-close-on-click="true" data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{ page.search }}
+          </div>         
+        </header>      
+        <div id="main">          
+          {% if page.content %}
+            <div id="main-middle">
+              <div class="inner wrapper">
+                <div class="row collapse">
+                  <div id="primary" class="{{primary_width}}column">
+                    {% if page.breadcrumb %}
+                      {{ page.breadcrumb }}
+                    {% endif %}
+                    {% if page.highlighted %}            
+                      <div id="highlight">
+                        {{ page.highlighted }}
+                      </div>
+                    {% endif %}
+                    <div id="content" class="clearfix">
+                      {{ page.content }}
+                    </div>                
+                  </div>                        
+                  {% if page.sidebar_secondary %}
+                    <div id="secondary" class="large-4 {{secondary_width}}column sidebar">
+                      {{ page.sidebar_secondary }}
+                    </div>
+                  {% endif %}
+                  {% if page.sidebar_tertiary %}
+                    <div id="tertiary" class="large-2 large-pull-10 column sidebar">
+                      {{ page.sidebar_tertiary }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}          
+        </div>
+        <footer id="footer">
+          {% if page.subscription %}    
+            <div id="subscription"{% if footer_middle > 0 %} class="with-footer"{% endif %}>
+              <div class="inner wrapper">
+                <div class="row collapse">
+                  <div class="large-8 column">
+                    {{ page.subscription }}
+                  </div>
+                  <div class="large-4 column">
+                    <div class="social-media">
+                      {{ page.social_media }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}          
+          <div id="closure">
+            <div class="inner wrapper">
+              <div id="site-info-alter" class="text-center">
+                {% if page.site_info %}          
+                  {{ page.site_info }}
+                {% endif %}
+              </div>                
+              {{ page.closure }}
+              <div class="design-by show-for-large">
+                <a href="http://www.esors.com" title="Drupal theme">Drupal theme by esors</a>
+              </div>
+            </div>
+          </div>  
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>

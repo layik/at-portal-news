@@ -1,0 +1,36 @@
+{#
+/* COPYRIGHT
+------------------------------------------------------------------  
+  Portal for Drupal 8.x - Version 1.0                           
+  Copyright (C) 2017 esors.com All Rights Reserved.           
+  @license - Copyrighted Commercial Software                   
+------------------------------------------------------------------  
+  Theme Name: Portal News                                          
+  Author: ESORS                                           
+  Date: 5th January 2017                                        
+  Website: http://www.esors.com/                              
+------------------------------------------------------------------  
+  This file may not be redistributed in whole or   
+  significant part.                                            
+----------------------------------------------------------------*/
+#} 
+<div class="row">
+  <div class="row">
+  {% for row in rows %}
+    {% if loop.index == 1 %}
+      <div class="large-4 column column-1">
+        <div class="inner">
+          {{ row.content }}
+        </div>
+      </div>
+    {% elseif loop.index > 1 and loop.index < 6 %}
+      <div class="medium-6 large-2 column column-{{loop.index}}">
+        <div class="inner">
+          {{ row.content }}
+        </div>
+      </div>
+    {% else %}
+    {% endif %}
+  {% endfor %} 
+  </div>
+</div>
