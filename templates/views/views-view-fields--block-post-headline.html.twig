@@ -18,7 +18,7 @@
 
 {% if '1' in counter|render %}
   {% set image %}{{ fields['field_image'].content|raw }}{% endset %}
-  <div class="image-default" style="{{ background_image(image) }}">{{ fields['view_node'].content }}</div>
+  <div class="image-default">{{ fields['view_node'].content }}</div>
   <div class="content">
     {% if fields['field_category'].content %}
       <div class="category">{{ fields['field_category'].content }}</div>
@@ -31,7 +31,7 @@
   </div>
 {% elseif '2' in counter|render %}
   {% set image %}{{ fields['field_image_1'].content|raw }}{% endset %}
-  <div class="image-default" style="{{ background_image(image) }}">{{ fields['view_node'].content }}</div>
+  <div class="image-default">{{ fields['view_node'].content }}</div>
   <div class="content">
     {% if fields['field_category'].content %}
       <div class="category">{{ fields['field_category'].content }}</div>
@@ -44,7 +44,7 @@
   </div>
 {% else %}
   {% set image %}{{ fields['field_image_2'].content|raw }}{% endset %}
-  <div class="image-default" style="{{ background_image(image) }}">{{ fields['view_node'].content }}</div>
+  <div class="image-default">{{ fields['view_node'].content }}</div>
   <div class="content">
     {% if fields['field_category'].content %}
       <div class="category">{{ fields['field_category'].content }}</div>
